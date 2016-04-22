@@ -1,6 +1,6 @@
 # 3C Analysis Tools
 
-This repository contains scripts to recreate figures in paper **Mutiscales** (2016). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
+This repository contains scripts to recreate figures in paper **Final to be determined** (2016). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
 
 ## Dependencies
