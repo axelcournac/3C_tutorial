@@ -7,6 +7,13 @@ This repository contains various codes developped for the porcessing, vizualisat
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
 
+### Python 
+* Numpy
+* Matplotlib
+* Scipy
+* Biopython
+
+
 ### R packages
 
 Lots of commonly-installed R packages are also used, including but not limited to: 
@@ -22,12 +29,6 @@ Lots of commonly-installed R packages are also used, including but not limited t
 
 * `BSgenome`
 
-
-### Python 
-* Numpy
-* Matplotlib
-* Scipy
-* Biopython
 
 ### External programs
 
