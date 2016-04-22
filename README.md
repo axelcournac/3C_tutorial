@@ -20,14 +20,14 @@ Lots of commonly-installed R packages are also used, including but not limited t
 
 #### Bioconductor
 
-* `BSgenome` (and UCSC hg19)
-* 
+* `BSgenome`
+
 
 ### Python 
 * Numpy
 * Matplotlib
 * Scipy
-* 
+* Biopython
 
 ### External programs
 
@@ -39,8 +39,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 
 
 ## Raw data
-Raw data were deposited on Short Read Archive server at the following address, example for the first run of the bank 
-
+Raw data were deposited on Short Read Archive server at the following address **To be determined**, example for the first run of the library etc.
 
 
 
@@ -70,8 +69,7 @@ bash convert_HDF5_txt.bh /path_of_the_bank_of_the_output_of_aligment
 ## Filtering of the data
 
 
-
-We then removed PCR duplicates i.e paires of reads that have exactly the same positions. This is done using the C code pcr_duplicate.c (using hash table for C with the library uthash-1.9.6).
+We then removed PCR duplicates. This is done using the C code pcr_duplicate.c (using hash table for C with the library uthash-1.9.6).
 ```bash
 gcc pcr_duplicate.c
 ./a.out
