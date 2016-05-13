@@ -12,9 +12,8 @@ For queries or help getting these running, you can contact me on mail or open an
 ## Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
-It basically requires to have Python installed on your machine. 
-
-Then
+It basically requires to have Python installed on your machine which commonly installed on Unix-based systems. 
+For windows, you can have a look to https://www.python.org/downloads/windows/.
 
 ### Python 
 * Numpy
@@ -32,7 +31,8 @@ Then
 
 
 ## Raw data
-Raw data were deposited on Short Read Archive server at the following address **To be determined**, example for the first run of the library etc.
+Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
+We will take as example in this tutorial the 
 
 
 
@@ -96,23 +96,4 @@ gcc binnage_distrib.c -lRmath  -lm
 
 
 
-## sessionInfo()
-
-Below is an output of sessionInfo() for troubleshooting purposes, some loaded packages may not be required and likewise, some required packages may not be loaded. An exception caused by attached packages is likely due to version issues.
-```r
-R version 3.2.0 (2015-04-16)
-Platform: x86_64-redhat-linux-gnu (64-bit)
-Running under: CentOS Linux 7 (Core)
-
-locale:
- [1] LC_CTYPE=fr_FR.utf8       LC_NUMERIC=C             
- [3] LC_TIME=fr_FR.utf8        LC_COLLATE=fr_FR.utf8    
- [5] LC_MONETARY=fr_FR.utf8    LC_MESSAGES=fr_FR.utf8   
- [7] LC_PAPER=fr_FR.utf8       LC_NAME=C                
- [9] LC_ADDRESS=C              LC_TELEPHONE=C           
-[11] LC_MEASUREMENT=fr_FR.utf8 LC_IDENTIFICATION=C      
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base  
-```
 
