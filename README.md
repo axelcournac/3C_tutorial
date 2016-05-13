@@ -27,8 +27,6 @@ For windows, you can have a look to https://www.python.org/downloads/windows/.
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
-
-
 ## Session 1: Raw data extraction and alignment
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
 We will take as example in this tutorial the 
@@ -59,26 +57,19 @@ bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet -
 We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). 
 
 
-## Filtering of the data: 
-This procedure is optional and might be necessary when you want to 
+## Filtering of the data:
+A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
+This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
 
 
 
 
 
 ## Session 2: Normalization of the data
-We used the normalization procedure called SCN (presented in http://www.biomedcentral.com/1471-2164/13/436) that we implemented in C. 
+We used the normalization procedure called SCN (presented in http://www.biomedcentral.com/1471-2164/13/436). 
+In the python code. 
 
-
-This program takes several arguments in input: 
-- a file of output of the aligment 
-- a file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution that will be used to make random sets with a particular null model. 
-- the thresholds [min - max] used for the normalization procedure that will exclude all bins whose norm is outside the ranges. It will notably filters poor interacting bins. 
-
-To calculate the bins coverage from a file of output of alignment, we use the C code bins_coverage.c.
-This code takes as input a file that contains coordinates of the bins and an alignment output file. 
-
-To have bins that are enriched with a certain repeat (repeat_masker_2013.dat22 file), we used the C code binnage_distrib.c which calculate the p-value of the null model of distribution (binomial law) associated with every bins. The library libRmath must be installed to use R functions in C. 
+It should be noted that this procedure does not conserv the symetry propertie of the matrix. 
 
 
 
