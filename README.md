@@ -5,7 +5,6 @@
 
 This repository contains several codes for the processing, vizualisation and analysis of 3C/Hi-C data.
 These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
-The different command lines or python codes used 
 
 For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
@@ -30,27 +29,27 @@ For windows, you can have a look to https://www.python.org/downloads/windows/.
 
 
 
-## Raw data
+## Session 1: Raw data extraction and alignment
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
 We will take as example in this tutorial the 
 
 
-
-We separate both ends of the reads using the command lines written in the script separate_mates.sh :
+We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library.
 ```bash
-bash separate_mates.sh
+/fastq-dump SRR639047 --split-3 -O /path_to_a_directory
 ```
 We aligned the reads with iterative alignment procedure (scripts used: iterative_mapping.py and mapping.py of [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
 Example of lines used to launch the alignment procedure:
-```bash
-bank='/media/human/bank400260/';  echo $bank; 
-fast1='/media/human/seq/SRR400260.fastq.end1'
-fast2='/media/human/seq/SRR400260.fastq.end2' 
-path_to_index='/home/axel/Bureau/python/fasta/human/hg19_python';
-path_to_fasta='/home/axel/Bureau/python/fasta/human';
-name_of_enzyme='HindIII'
 
-python iterative_mapping.py  $bank $fast1 $fast2 $path_to_index $path_to_fasta $name_of_enzyme 
+# indexing of your genome:
+
+```bash
+bowtie2-build chr1.fa, chr2.fa name_index
+```
+
+or download it:
+```
+http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 ```
 
 We convert the output of the aligment which is in HDF5 format into text file with the script convert_HDF5_txt.bh:
