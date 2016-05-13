@@ -3,12 +3,18 @@
 ![quizzler_workflow](https://github.com/axelcournac/3C_analysis_tools.git/3C_analysis_tools/Capture du 2016-05-12 15:30:50.png)
 
 
-This repository contains various codes developped for the porcessing, vizualisation and analysis of 3C data used in the paper **Final title to be determined**. The different figures of the paper can be repoduced. For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
+This repository contains several codes for the processing, vizualisation and analysis of 3C/Hi-C data.
+These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
+The different command lines or python codes used 
 
+For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
 ## Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
+It basically requires to have Python installed on your machine. 
+
+Then
 
 ### Python 
 * Numpy
@@ -17,29 +23,12 @@ Scripts will run on OS X and other Unix-based systems. External dependencies sho
 * Biopython
 
 
-### R packages
-
-Lots of commonly-installed R packages are also used, including but not limited to: 
-
-#### CRAN
-
-* `calibrate`
-* `verification`
-* `ROCR`
-* `libRmath`
-
-#### Bioconductor
-
-* `BSgenome`
-
 
 ### External programs
 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
-* `ICE` / [hiclib](http://mirnylab.bitbucket.org/hiclib)
-* `GNU Scientific Library` / [GSL](http://www.gnu.org/software/gsl/) 
-* `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html)
+
 
 
 ## Raw data
