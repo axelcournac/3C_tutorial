@@ -38,19 +38,27 @@ We used an SRA executable called fastq-dump from SRA to extract and split both m
 ```bash
 /fastq-dump SRR639047 --split-3 -O /path_to_a_directory
 ```
-We aligned the reads with iterative alignment procedure (scripts used: iterative_mapping.py and mapping.py of [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
-Example of lines used to launch the alignment procedure:
 
-# indexing of your genome:
+# Alignment
+We aligned the reads with iterative alignment procedure (scripts used: iterative_mapping.py and mapping.py of [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
+
+
+Before aligning the reads on a referecne genome, you need to index it:
 
 ```bash
 bowtie2-build chr1.fa, chr2.fa name_index
 ```
+You can also download the most used ones on the following link: **http://bowtie-bio.sourceforge.net/bowtie2/index.shtml**
 
-or download it:
+Examples of lines used to launch the alignment procedure:
+```bash
+bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local \
+-S p1.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end1.pcrfree
+
+bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local \
+-S p2.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end2.pcrfree
 ```
-http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
-```
+
 
 We convert the output of the aligment which is in HDF5 format into text file with the script convert_HDF5_txt.bh:
 
