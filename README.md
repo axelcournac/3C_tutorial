@@ -67,7 +67,7 @@ awk '{print $1,$3,$4,$2,$5;}' p2.sam > p2.sam.0
 sort -d -k1 p1.sam.0 > p1.sam.0.sorted
 sort -d -k1 p2.sam.0 > p2.sam.0.sorted
 
-# Pairing of both mates in a sigle file
+# Pairing of both mates in a single file
 paste p1.sam.0.sorted p2.sam.0.sorted > p1_p2_merged
 
 # removal of intermediar files
