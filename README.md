@@ -1,4 +1,4 @@
-# 3C Analysis Tools
+# Tutorial for 3C/Hi-C data processing 
 
 
 This repository contains several codes and simple command lines for the processing, vizualisation and primary analysis of 3C/Hi-C datasets.
