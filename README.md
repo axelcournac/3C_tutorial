@@ -62,15 +62,11 @@ We could have also aligned the reads with an iterative alignment procedure like 
 It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the pairs mode of Bowtie is not suited for Hi-C data). 
 
 
-#### Filtering of the data:
+#### Filtering of the data
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
 This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
 
 In this step, you need to assign a restriction fragment to every locus (chrm - position). 
-
-
-
-
 
 
 ## Session 2: Normalization of the data
@@ -97,6 +93,8 @@ The correlation matrice is computed.
 
 
 ## Session 5: Directional Index tool to detect TADs
+This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
+It consists in doing a T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
 
 
 ## Session 6: Decomposition into eigen vectors 
