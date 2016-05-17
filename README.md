@@ -28,9 +28,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/. T
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
 In this tutorial, we take as example one run of the replicat 2 of IMR90 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html). Raw data can be retreived at SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173. 
 
-We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).Then the program can be used like this:
-
-/fastq-dump library_identification --split-3 -O /path_to_a_directory
+We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).Then the program can be used like this:  /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
 ```bash
 ./fastq-dump SRR639031 --split-3 -O /run/media/axel/RSG3/IMR90_data/
@@ -135,3 +133,6 @@ It should be kept in mind that this is a first approximation of the 3D structure
 ## Use of sparse formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/sparse.png)
+
+In python, functions implemented for the use of sparse formalism can be found in the module scipy.
+
