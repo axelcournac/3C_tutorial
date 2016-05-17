@@ -1,7 +1,7 @@
 # 3C Analysis Tools
 
 ![quizzler_workflow](https://github.com/axelcournac/3C_analysis_tools.git/3C_analysis_tools/Capture du 2016-05-12 15:30:50.png)
-
+![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 
 This repository contains several codes and simple command lines for the processing, vizualisation and primary analysis of 3C/Hi-C datasets.
 These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
