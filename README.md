@@ -56,6 +56,18 @@ bowtie2 -x /run/media/axel/Pasteur_Koszul/human_index_downloaded/hg19 -p6 --sam-
 ```
 We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). In this procedure, each read starts with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
 It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the "pairs mode" of Bowtie is not recommanded for Hi-C data). 
+Here, some lines that can be used to do this task:
+
+```bash
+awk '{print $1,$3,$4,$2,$5;}' p1.sam > p1.sam.0
+awk '{print $1,$3,$4,$2,$5;}' p2.sam > p2.sam.0
+
+sort -d -k1 p1.sam.0 > p1.sam.0.sorted
+sort -d -k1 p2.sam.0 > p2.sam.0.sorted
+
+paste p1.sam.0.sorted p2.sam.0.sorted > p1_p2_merged
+awk '{if($1==$6 && $5>= 30 && $10 >= 30) print $2,$3,$4,$7,$8,$9}'  p1_p2_merged  > output_alignment_idpt.dat
+```
 
 
 #### Filtering of the data
