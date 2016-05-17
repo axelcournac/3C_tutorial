@@ -28,6 +28,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/.
 * `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
 ## Session 1: Raw data extraction and alignment
+### Data extraction
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
 In this tutorial, we take as example one run of the replicat 2 of IMR90 from Dixon et al. Nature 2012 (SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173). 
 
