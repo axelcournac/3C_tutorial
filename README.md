@@ -32,7 +32,7 @@ Raw data are deposited on Short Read Archive server at the following address **h
 In this tutorial, we take as example one run of the replicat 2 of IMR90 from Dixon et al. Nature 2012 (SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173). 
 
 
-We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).
+We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).Then the program can be used like this:
 
 /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
@@ -58,7 +58,9 @@ bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet -
 -S p2.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end2.pcrfree
 ```
 We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). In this procedure, each read starts with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
-It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the paire mode is not suited for Hi-C data). 
+It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the pairs mode of Bowtie is not suited for Hi-C data). 
+
+
 
 
 ## Filtering of the data:
@@ -92,12 +94,16 @@ It consist in computing the mean number of reads in function of the genomic dist
 
 
 ### Session 4: Computation of correlation matrices
+The correlation matrice is computed. 
 
 
-### Session 5: Decomposition into eigen vectors 
+### Session 5: Directional Index tool to detect TADs
 
 
-### Session 6: Use of sparce formalism for contacts maps
+### Session 6: Decomposition into eigen vectors 
+
+
+### Session 7: Use of sparce formalism for contacts maps
 Another way to mathematically represent the data, it the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
 
 
