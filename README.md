@@ -6,6 +6,14 @@ These codes were used during the INSERM workshop "Capturing chromosone conformat
 
 For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
+### Table of contents
+
+* [Dependencies](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#dependencies)
+* [Raw data extraction and alignment](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#raw-data-extraction-and-alignment)
+* [Building of the contacts map](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#building-of-the-contacts-map)
+* [Normalization of the data](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#normalization-of-the-data)
+
+
 ### Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
