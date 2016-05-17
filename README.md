@@ -25,7 +25,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/. T
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
-## Session 1: Raw data extraction and alignment
+## Raw data extraction and alignment
 #### Data extraction
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
 In this tutorial, we take as example one run of the replicat 2 of IMR90 from Dixon et al. Nature 2012 (SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173). 
@@ -65,10 +65,10 @@ It is important to align each mate idependently and then repair them  (Bowtie ex
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
 This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
 
-In this step, you need to assign a restriction fragment to every locus (chrm - position). 
+In this step, you need to assign a restriction fragment to every locus (chrm - position). This can be done like in the python code fragment_attribution.py. 
 
 
-## Session 2: Normalization of the data
+## Normalization of the data
 We used the normalization procedure called SCN (presented in http://www.biomedcentral.com/1471-2164/13/436). 
 This procedure assumes that every bin should be detected with the same strength. We divide each line by its sum then each column by its sum. We reiterate this loop several times. It has been shown that after several iterations, the matrice converged. 
 Before the iterations, poor interacting bins must be discarded and considered as non detectable bins. 
@@ -86,29 +86,29 @@ mn.T is the transposed matrice of mn.
 
 
 
-## Session 3: Computation of genomic distance law
-This plot is important and must be computed in the first steps of the data analysis. It reflects the polymer behaviour of the chromatin and thus allows to check the presence or absence of 3D signal. 
+## Computation of genomic distance law
+This plot is important and must be computed at the very first steps of data processing. It reflects the polymer behaviour of the chromatin and thus allows to check the presence or absence of 3D signal. 
 It consists in computing the mean number of reads in function of the genomic distance separating the two loci. 
 The computation thus consists in scanning every diagonal of the matrice and taking the average of this sets of elements.
 
 
-## Session 4: Computation of correlation matrices
+## Computation of correlation matrices
 The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
 It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice. 
 
 
-## Session 5: Directional Index tool to detect TADs
+## Directional Index tool to detect TADs
 This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
 It consists in doing a paired T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
 
 
-## Session 6: Decomposition into eigen vectors 
+## Decomposition into eigen vectors 
 This geometrical transformation allows to decompose the matrice into eigen values and vectors. It is a way to simplify the data or at least to decrease the dimentionality of the mathematical object. 
 It has been shown that the first eigen vector corresponds to the 2 compartments partition of the genome. 
-It should be kept in mind that it is an first approximation of the 3D structure of genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
+It should be kept in mind that this is a first approximation of the 3D structure of a genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
 
-## Session 7: Use of sparce formalism
+## Use of sparce formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
 
 
