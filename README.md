@@ -8,19 +8,19 @@ These codes were used during the INSERM workshop "Capturing chromosone conformat
 
 For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
-## Dependencies
+### Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
 It basically requires to have Python installed on your machine which is commonly installed on Unix-based systems. 
 For windows, you can have a look to https://www.python.org/downloads/windows/. Then, a few specific python modules are necessary for diverses operations on arrays and vizualisation. 
 
-### Python
+#### Python
 * Numpy
 * Matplotlib
 * Scipy
 * Biopython
 
-### External programs
+#### External programs
 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
