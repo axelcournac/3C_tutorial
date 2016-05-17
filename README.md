@@ -19,8 +19,6 @@ For queries or help getting these running, you can contact me on mail or open an
 * [Use of sparse formalism](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#use-of-sparse-formalism)
 
 
-
-
 ### Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
@@ -97,6 +95,19 @@ These lines can be combined in a same bash script and be executed by launching t
 ```bash
 bash script_bash_INSERM.bh
 ```
+
+At this stage, you should have a file containing these information::
+chrX 104115113 16 chr5 169107262 0
+chr15 64627253 16 chr15 64627696 0
+chr1 9155504 16 chr10 77551370 16
+chr20 36390507 0 chr15 48945063 0
+chrX 134656481 0 chrX 134656772 16
+chr4 127660544 16 chr1 7470584 0
+chr5 137488897 0 chr9 27468101 0
+chr3 178179845 0 chr3 171257372 16
+
+
+
 
 #### Filtering of the data
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
