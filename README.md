@@ -33,8 +33,10 @@ We will take as example in this tutorial the
 
 
 We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library.
+/fastq-dump library_identification --split-3 -O /path_to_a_directory
+
 ```bash
-/fastq-dump SRR639047 --split-3 -O /path_to_a_directory
+./fastq-dump SRR639047 --split-3 /run/media/axel/RSG3/IMR90_data
 ```
 
 ### Alignment
