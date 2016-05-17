@@ -80,7 +80,10 @@ awk '{if($1==$6 && $5>= 30 && $10 >= 30) print $2,$3,$4,$7,$8,$9}'  p1_p2_merged
 # Removal of intermediar file
 rm p1_p2_merged
 ```
-
+These lines can be combined in a same bash script and be executed by launching the script:
+```bash
+bash script_bash_INSERM.bh
+```
 
 #### Filtering of the data
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
