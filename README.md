@@ -1,7 +1,5 @@
 # 3C Analysis Tools
 
-![quizzler_workflow](https://github.com/axelcournac/3C_analysis_tools/blob/master/sparse.png)
-![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/sparse.png)
 
 This repository contains several codes and simple command lines for the processing, vizualisation and primary analysis of 3C/Hi-C datasets.
 These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
@@ -108,4 +106,4 @@ It should be kept in mind that this is a first approximation of the 3D structure
 
 ## Use of sparse formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
-
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/sparse.png)
