@@ -66,7 +66,12 @@ sort -d -k1 p1.sam.0 > p1.sam.0.sorted
 sort -d -k1 p2.sam.0 > p2.sam.0.sorted
 
 paste p1.sam.0.sorted p2.sam.0.sorted > p1_p2_merged
+
+rm p1.sam.0.sorted
+rm p1.sam.0.sorted
+
 awk '{if($1==$6 && $5>= 30 && $10 >= 30) print $2,$3,$4,$7,$8,$9}'  p1_p2_merged  > output_alignment_idpt.dat
+rm p1_p2_merged
 ```
 
 
