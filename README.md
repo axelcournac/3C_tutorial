@@ -26,7 +26,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/. T
 ## Raw data extraction and alignment
 #### Data extraction
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
-In this tutorial, we take as example one run of the replicat 2 of IMR90 from Dixon et al. Nature 2012 (SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173). 
+In this tutorial, we take as example one run of the replicat 2 of IMR90 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html). Raw data can be retreived at SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173. 
 
 We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).Then the program can be used like this:
 
