@@ -82,12 +82,12 @@ It should be noticed that this procedure does not conserve the symetry propertie
 ```python
 mn=(mn+mn.T)/2;
 ```
-mn.T is the transposated matrice of mn. 
+mn.T is the transposed matrice of mn. 
 
 
 
 ## Session 3: Computation of genomic distance law
-This plot is very important and must be computed in the firts momemnt of the analysis. It reflects the polymer behavoir of the chromatin and allow to check if there is 3D signal. 
+This plot is important and must be computed in the first steps of the data analysis. It reflects the polymer behaviour of the chromatin and thus allows to check the presence or absence of 3D signal. 
 It consists in computing the mean number of reads in function of the genomic distance separating the two loci. 
 The computation thus consists in scanning every diagonal of the matrice and taking the average of this sets of elements.
 
@@ -99,13 +99,13 @@ It is simply computed by taking the Pearson Coefficient (or another correlation 
 
 ## Session 5: Directional Index tool to detect TADs
 This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
-It consists in doing a T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
+It consists in doing a paired T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
 
 
 ## Session 6: Decomposition into eigen vectors 
 This geometrical transformation allows to decompose the matrice into eigen values and vectors. It is a way to simplify the data or at least to decrease the dimentionality of the mathematical object. 
-It has been shown that the firts eigen vector corresponds to the 2 compartments partition of the genome. 
-It should be kept in mind that it is a firts approximation of the 3D structure of genome and other or sub-compartments can be detected using higher resolution and/ or using other tools of compartment detection.
+It has been shown that the first eigen vector corresponds to the 2 compartments partition of the genome. 
+It should be kept in mind that it is an first approximation of the 3D structure of genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
 
 ## Session 7: Use of sparce formalism
