@@ -28,7 +28,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/.
 * `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
 ## Session 1: Raw data extraction and alignment
-### Data extraction
+#### Data extraction
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
 In this tutorial, we take as example one run of the replicat 2 of IMR90 from Dixon et al. Nature 2012 (SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173). 
 
@@ -41,7 +41,7 @@ We used an SRA executable called fastq-dump from SRA to extract and split both m
 ./fastq-dump SRR639047 --split-3 -O /run/media/axel/RSG3/IMR90_data/
 ```
 
-### Alignment
+#### Alignment
 
 Before aligning the reads on a reference genome, you need to index it:
 
@@ -62,9 +62,7 @@ We could have also aligned the reads with an iterative alignment procedure like 
 It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the pairs mode of Bowtie is not suited for Hi-C data). 
 
 
-
-
-## Filtering of the data:
+#### Filtering of the data:
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
 This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
 
