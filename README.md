@@ -20,8 +20,6 @@ For windows, you can have a look to https://www.python.org/downloads/windows/.
 * Scipy
 * Biopython
 
-
-
 ### External programs
 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
@@ -38,7 +36,7 @@ We used an SRA executable called fastq-dump from SRA to extract and split both m
 /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
 ```bash
-./fastq-dump SRR639047 --split-3 -O /run/media/axel/RSG3/IMR90_data/
+./fastq-dump SRR639031 --split-3 -O /run/media/axel/RSG3/IMR90_data/
 ```
 
 #### Alignment
@@ -98,6 +96,9 @@ It consists in doing a T test between "left vector" and "right vector" on each b
 
 
 ## Session 6: Decomposition into eigen vectors 
+This geometrical transformation allows to decompose the matrice into eigen values and vectors. It is a way to simplify the data or at least to decrease the dimentionality of the mathematical object. 
+It has been shown that the firts eigen vector corresponds to the 2 compartments partition of the genome. 
+It should be kept in mind that it is a firts approximation of the 3D structure of genome and other or sub-compartments can be detected using higher resolution and/ or using other tools of compartment detection.
 
 
 ## Session 7: Use of sparce formalism for contacts maps
