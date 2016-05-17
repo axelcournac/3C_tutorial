@@ -26,7 +26,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/. T
 ## Raw data extraction and alignment
 #### Data extraction
 Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
-In this tutorial, we take as example one run of the replicat 2 of IMR90 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html). Raw data can be retreived at SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173. 
+In this tutorial, we take as example one run of the replicat 2 of IMR90 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html). Raw data can be retreived at  http://www.ncbi.nlm.nih.gov/sra/SRX212173 (the identification number is SRR639031). 
 
 We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).Then the program can be used like this:  /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
@@ -100,6 +100,11 @@ This procedure assumes that every bin should be detected with the same strength.
 Before the iterations, poor interacting bins must be discarded and considered as non detectable bins. 
 To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine the threshold you can plot the distribution in the number of reads by doing the histogram:
 
+```python
+from histo_r import *
+histo_r(m.sum(axis=0),100)
+```
+The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hits).   
 
 In the python code. 
 
