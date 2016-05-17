@@ -89,6 +89,10 @@ This procedure is optional and might be necessary when you want to study the str
 
 In this step, you need to assign a restriction fragment to every locus (chrm - position). This can be done like in the python code fragment_attribution.py. 
 
+## Building of the contacts map
+
+From the contacts, 
+
 
 ## Normalization of the data
 We used the normalization procedure called SCN (for Sequential Component Normalization presented in http://www.biomedcentral.com/1471-2164/13/436). 
