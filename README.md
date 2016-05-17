@@ -88,23 +88,23 @@ It should be noticed that this procedure does not conserve the symetry propertie
 
 
 
-### Session 3: Computation of a genomic distance law
+## Session 3: Computation of a genomic distance law
 This plot is very important and must be computed in the firts momemnt of the analysis. It reflects the polymer behavoir of the chromatin and allow to check if there is 3D signal. 
 It consist in computing the mean number of reads in function of the genomic distance between the two loci. 
 
 
-### Session 4: Computation of correlation matrices
+## Session 4: Computation of correlation matrices
 The correlation matrice is computed. 
 
 
-### Session 5: Directional Index tool to detect TADs
+## Session 5: Directional Index tool to detect TADs
 
 
-### Session 6: Decomposition into eigen vectors 
+## Session 6: Decomposition into eigen vectors 
 
 
-### Session 7: Use of sparce formalism for contacts maps
-Another way to mathematically represent the data, it the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
+## Session 7: Use of sparce formalism for contacts maps
+An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
 
 
 
