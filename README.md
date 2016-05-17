@@ -93,7 +93,7 @@ In this step, you need to assign a restriction fragment to every locus (chrm - p
 
 
 ## Normalization of the data
-We used the normalization procedure called SCN (presented in http://www.biomedcentral.com/1471-2164/13/436). 
+We used the normalization procedure called SCN (for Sequential Component Normalization presented in http://www.biomedcentral.com/1471-2164/13/436). 
 This procedure assumes that every bin should be detected with the same strength. We divide each line by its sum then each column by its sum. We reiterate this loop several times. It has been shown that after several iterations, the matrice converged. 
 Before the iterations, poor interacting bins must be discarded and considered as non detectable bins. 
 To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine the threshold you can plot the distribution in the number of reads by doing the histogram:
