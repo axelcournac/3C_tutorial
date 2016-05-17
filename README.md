@@ -3,7 +3,7 @@
 ![quizzler_workflow](https://github.com/axelcournac/3C_analysis_tools.git/3C_analysis_tools/Capture du 2016-05-12 15:30:50.png)
 
 
-This repository contains several codes for the processing, vizualisation and analysis of 3C/Hi-C data.
+This repository contains several codes for the processing, vizualisation and primary analysis of 3C/Hi-C data.
 These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
 
 For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
@@ -14,7 +14,7 @@ Scripts will run on OS X and other Unix-based systems. External dependencies sho
 It basically requires to have Python installed on your machine which is commonly installed on Unix-based systems. 
 For windows, you can have a look to https://www.python.org/downloads/windows/.
 
-### Python 
+### Python
 * Numpy
 * Matplotlib
 * Scipy
@@ -76,8 +76,12 @@ To do that, a threshold is given as an argument to the SCN function so that ever
 
 In the python code. 
 
-It should be noticed that this procedure does not conserve the symetry propertie of the matrix. To 
+It should be noticed that this procedure does not conserve the symetry propertie of the matrix. To recover the symetry property you can use a simple line in python:
 
+```python
+mn=(mn+mn.T)/2;
+```
+mn.T is the transposated matrice of mn. 
 
 
 
