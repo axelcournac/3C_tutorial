@@ -106,4 +106,4 @@ It should be kept in mind that this is a first approximation of the 3D structure
 
 ## Use of sparse formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
-![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/sparse.png)
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/sparse.png)
