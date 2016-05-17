@@ -36,6 +36,7 @@ We used an SRA executable called fastq-dump from SRA to extract and split both m
 ./fastq-dump SRR639031 --split-3 -O /run/media/axel/RSG3/IMR90_data/
 ```
 
+
 #### Alignment
 
 Before aligning the reads on a reference genome, you need to index it, the line to enter is as follows: bowtie2-build [list of fasta files of your genome separated by comma] [name of index you want to give].
