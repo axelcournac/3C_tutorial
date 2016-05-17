@@ -104,7 +104,7 @@ To do that, a threshold is given as an argument to the SCN function so that ever
 from histo_r import *
 histo_r(m.sum(axis=0),100)
 ```
-The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hits).   
+The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hist() ).   
 
 In the python code. 
 
