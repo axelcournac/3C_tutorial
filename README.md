@@ -51,11 +51,9 @@ We align the raw reads with the software bowtie2 with several options. Informati
 
 Examples of lines used to launch the alignment procedure:
 ```bash
-bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local \
--S p1.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end1.pcrfree
+bowtie2 -x /run/media/axel/Pasteur_Koszul/human_index_downloaded/hg19 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local -S p1.sam SRR639031_1.fastq 
 
-bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local \
--S p2.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end2.pcrfree
+bowtie2 -x /run/media/axel/Pasteur_Koszul/human_index_downloaded/hg19 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local -S p2.sam SRR639031_2.fastq 
 ```
 We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). In this procedure, each read starts with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
 It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the "pairs mode" of Bowtie is not recommanded for Hi-C data). 
