@@ -37,7 +37,7 @@ We used an SRA executable called fastq-dump from SRA to extract and split both m
 /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
 ```bash
-./fastq-dump SRR639047 --split-3 /run/media/axel/RSG3/IMR90_data/
+./fastq-dump SRR639047 --split-3 -O /run/media/axel/RSG3/IMR90_data/
 ```
 
 ### Alignment
