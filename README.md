@@ -16,6 +16,10 @@ For queries or help getting these running, you can contact me on mail or open an
 * [Computation of correlation matrices](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#computation-of-correlation-matrices)
 * [Directional Index tool to detect TADs](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#directional-index-tool-to-detect-tads)
 * [Decomposition into eigen vectors](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#decomposition-into-eigen-vectors)
+* [Use of sparse formalism](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#use-of-sparse-formalism)
+
+
+
 
 ### Dependencies
 
