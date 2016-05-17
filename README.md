@@ -97,6 +97,7 @@ bash script_bash_INSERM.bh
 ```
 
 At this stage, you should have a file containing these information::
+
 chrX 104115113 16 chr5 169107262 0
 chr15 64627253 16 chr15 64627696 0
 chr1 9155504 16 chr10 77551370 16
