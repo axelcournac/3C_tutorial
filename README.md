@@ -108,13 +108,6 @@ It has been shown that the first eigen vector corresponds to the 2 compartments 
 It should be kept in mind that this is a first approximation of the 3D structure of a genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
 
-## Use of sparce formalism
+## Use of sparse formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
-
-
-
-
-
-
-
 
