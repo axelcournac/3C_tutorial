@@ -11,7 +11,7 @@ For queries or help getting these running, you can contact me on mail or open an
 ## Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
-It basically requires to have Python installed on your machine which commonly installed on Unix-based systems. 
+It basically requires to have Python installed on your machine which is commonly installed on Unix-based systems. 
 For windows, you can have a look to https://www.python.org/downloads/windows/.
 
 ### Python 
@@ -32,7 +32,7 @@ Raw data are deposited on Short Read Archive server at the following address **h
 In this tutorial, we take as example one run of the replicat 2 of IMR90 from Dixon et al. Nature 2012 (SRR639031 http://www.ncbi.nlm.nih.gov/sra/SRX212173). 
 
 
-We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with the terminal by using the command cd to the directory containg the executables).
+We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).
 
 /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
@@ -57,7 +57,8 @@ bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet -
 bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local \
 -S p2.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end2.pcrfree
 ```
-We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). This procedure start with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
+We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). In this procedure, each read starts with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
+It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the paire mode is not suited for Hi-C data). 
 
 
 ## Filtering of the data:
