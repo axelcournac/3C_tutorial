@@ -93,6 +93,10 @@ It consist in computing the mean number of reads in function of the genomic dist
 ### Session 5: Decomposition into eigen vectors 
 
 
+### Session 6: Use of sparce formalism for contacts maps
+Another way to mathematically represent the data, it the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
+
+
 
 
 
