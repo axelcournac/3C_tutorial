@@ -47,7 +47,7 @@ bowtie2-build chr10.fa,chr11.fa,chr11_gl000202_random.fa,chr12.fa,chr13.fa,chr14
 ```
 You can also download the most used ones on the following link: **http://bowtie-bio.sourceforge.net/bowtie2/index.shtml**
 
-We align the raw reads with the software bowtie2 with several options. Information can be found in the reference manual (**http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml**).
+We align the raw reads with the software bowtie2 with several options. Information can be found in the following reference manual (**http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml**).
 
 Examples of lines used to launch the alignment procedure:
 ```bash
@@ -58,7 +58,7 @@ bowtie2 -x indices_genomes/sacCer3/sacCer3 -p6 --sam-no-hd --sam-no-sq --quiet -
 -S p2.sam /media/03b8b079-9d7a-4162-8201-6dd5d9923f62/2013/11_05_2013_Hi_Seq_MM/sequencage_nov2013/RSG6_L6/seq/BC76_CTGT.dat.end2.pcrfree
 ```
 We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). In this procedure, each read starts with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
-It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the pairs mode of Bowtie is not suited for Hi-C data). 
+It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the "pairs mode" of Bowtie is not recommanded for Hi-C data). 
 
 
 #### Filtering of the data
@@ -86,13 +86,15 @@ mn.T is the transposated matrice of mn.
 
 
 
-## Session 3: Computation of a genomic distance law
+## Session 3: Computation of genomic distance law
 This plot is very important and must be computed in the firts momemnt of the analysis. It reflects the polymer behavoir of the chromatin and allow to check if there is 3D signal. 
-It consist in computing the mean number of reads in function of the genomic distance between the two loci. 
+It consists in computing the mean number of reads in function of the genomic distance separating the two loci. 
+The computation thus consists in scanning every diagonal of the matrice and taking the average of this sets of elements.
 
 
 ## Session 4: Computation of correlation matrices
-The correlation matrice is computed. 
+The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
+It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice. 
 
 
 ## Session 5: Directional Index tool to detect TADs
@@ -106,7 +108,7 @@ It has been shown that the firts eigen vector corresponds to the 2 compartments 
 It should be kept in mind that it is a firts approximation of the 3D structure of genome and other or sub-compartments can be detected using higher resolution and/ or using other tools of compartment detection.
 
 
-## Session 7: Use of sparce formalism for contacts maps
+## Session 7: Use of sparce formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
 
 
