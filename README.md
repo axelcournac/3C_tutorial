@@ -85,7 +85,7 @@ paste p1.sam.0.sorted p2.sam.0.sorted > p1_p2_merged
 
 # Removal of intermediar files
 rm p1.sam.0.sorted
-rm p1.sam.0.sorted
+rm p2.sam.0.sorted
 
 # Filtering of paires of reads that both have a Mapping Quality above 30
 awk '{if($1==$6 && $5>= 30 && $10 >= 30) print $2,$3,$4,$7,$8,$9}'  p1_p2_merged  > output_alignment_idpt.dat
