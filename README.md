@@ -203,6 +203,8 @@ Example of plot obtained for the chromosome 3:
 The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
 It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice.  
 
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_CORRELATION2.png)
+
 
 ## Directional Index tool to detect TADs
 This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
