@@ -166,7 +166,7 @@ The normalised contacts map should look like this:
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_NORMALISED.png)
 
-The matrice elements can be viewed as relatives frequencies of contacts between different loci (the score goes now from 0 to 1).
+The matrice elements can be viewed as relative frequencies of contacts between different loci (the scores go now from 0 to 1).
 
 
 ## Computation of genomic distance law
