@@ -1,7 +1,7 @@
 # Tutorial for 3C/Hi-C data processing 
 
 
-This document contains several codes and simple command lines for the processing, vizualisation and primary analysis of 3C/Hi-C datasets.
+This document presents several codes and simple command lines for the processing, vizualisation and primary analysis of 3C/Hi-C datasets.
 These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
 
 For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
