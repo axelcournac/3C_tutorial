@@ -109,7 +109,8 @@ chr3 178179845 0 chr3 171257372 16
 ```
 
 You can assign a restriction fragment to each locus using the python code. 
-The command to enter to use it is: Path for fasta files of genome, Restriction enzyme, Alignment file
+The command to enter to use it is: python fragment_attribution.py [path for fasta files of genome] [Restriction enzyme]  [Alignment file]
+
 Ex: 
 ```bash
 python fragment_attribution.py /run/media/axel/RSG3/human_genome/ HindIII /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat
