@@ -138,7 +138,8 @@ This procedure is optional and might be necessary when you want to study the str
 ## Building of the contacts map
 
 From the contacts, you can build a binned contacts map.
-
+For the human chromosome 3, uou shoud have a picture looking like this:
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_RAW.png)
 
 ## Normalization of the data
 We used the normalization procedure called SCN (for Sequential Component Normalization presented in http://www.biomedcentral.com/1471-2164/13/436). 
