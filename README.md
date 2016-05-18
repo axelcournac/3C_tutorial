@@ -115,7 +115,17 @@ Ex:
 ```bash
 python fragment_attribution.py /run/media/axel/RSG3/human_genome/ HindIII /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat
 ```
-
+The indices start at 0 for every chromosome, you should have a file contains the indices:
+```
+chrX	104115113	16	29877	chr5	169107262	0	52159
+chr15	64627253	16	12632	chr15	64627696	0	12632
+chr1	9155504	16	1806	chr10	77551370	16	21377
+chr20	36390507	0	8974	chr15	48945063	0	7863
+chrX	134656481	0	39113	chrX	134656772	16	39113
+chr4	127660544	16	38703	chr1	7470584	0	1411
+chr5	137488897	0	42558	chr9	27468101	0	8715
+chr3	178179845	0	53834	chr3	171257372	16	51648
+```
 
 #### Filtering of the data
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
