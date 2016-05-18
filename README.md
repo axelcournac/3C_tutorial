@@ -181,6 +181,7 @@ It consists in computing the mean number of reads in function of the genomic dis
 The computation thus consists in scanning every diagonal of the matrice and taking the average of this sets of elements.
 
 ```python
+from pylab import *
 import distance_law_human
 
 # mn: normalised matrice
