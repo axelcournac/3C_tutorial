@@ -108,6 +108,14 @@ chr5 137488897 0 chr9 27468101 0
 chr3 178179845 0 chr3 171257372 16
 ```
 
+You can assign a restriction fragment to each locus using the python code. 
+The command to enter to use it is: Path for fasta files of genome, Restriction enzyme, Alignment file
+Ex: 
+```bash
+python fragment_attribution.py /run/media/axel/RSG3/human_genome/ HindIII /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat
+```
+
+
 #### Filtering of the data
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
 This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
