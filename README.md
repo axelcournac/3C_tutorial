@@ -109,7 +109,7 @@ chr3 178179845 0 chr3 171257372 16
 ```
 
 The 3rd and 6th fields correspond to the directions of the reads: 0 means in the same direction as the reference genome, 16 means in the opposite direction.
-You can assign a restriction fragment to each locus using the python code **fragment_attribution.py** ([`python_codes/fragment_attribution.py`](python_codes/fragment_attribution.py)):. 
+You can assign a restriction fragment to each locus using the python code **fragment_attribution.py** [`fragment_attribution.py`](python_codes/fragment_attribution.py):
 
 The command to enter to use it is: 
 
