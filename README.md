@@ -152,7 +152,9 @@ To do that, a threshold is given as an argument to the SCN function so that ever
 from histo_r import *
 histo_r(m.sum(axis=0),100)
 ```
-The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hist() ).   
+The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hist() ).  
+
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/historgram_chr3.png)
 
 It should be noticed that this procedure does not conserve the symetry property of the matrix. To recover the symetry property you can use a simple line in python:
 ```python
