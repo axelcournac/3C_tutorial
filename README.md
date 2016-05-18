@@ -108,14 +108,16 @@ chr5 137488897 0 chr9 27468101 0
 chr3 178179845 0 chr3 171257372 16
 ```
 
+The 3rd and 6th fields correspond to the directions of the reads: 0 means in the same direction as the reference genome, 16 means in the opposite direction.
 You can assign a restriction fragment to each locus using the python code. 
+
 The command to enter to use it is: python fragment_attribution.py [path for fasta files of genome] [Restriction enzyme]  [Alignment file]
 
 Ex: 
 ```bash
 python fragment_attribution.py /run/media/axel/RSG3/human_genome/ HindIII /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat
 ```
-The indices start at 0 for every chromosome, you should have a file contains the indices:
+The indices start at 0 for every chromosome, you should have a file containing the indices:
 ```
 chrX	104115113	16	29877	chr5	169107262	0	52159
 chr15	64627253	16	12632	chr15	64627696	0	12632
