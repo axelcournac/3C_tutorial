@@ -162,6 +162,12 @@ mn=(mn+mn.T)/2;
 ```
 where mn.T is the transposed matrice of mn. 
 
+The normalised contacts map should look like this:
+
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_NORMALISED.png)
+
+The matrice elements can be viewed as relatives frequencies of contacts between different loci (the score goes now from 0 to 1).
+
 
 ## Computation of genomic distance law
 This plot is important and must be computed at the very first steps of data processing. It reflects the polymer behaviour of the chromatin and thus allows to check the presence or absence of 3D signal. 
