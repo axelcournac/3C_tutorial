@@ -203,6 +203,31 @@ Example of plot obtained for the chromosome 3:
 The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
 It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice.  
 
+```python
+n1=mn.shape[0];
+# Computation of genomic distance law matrice:
+MAT_DIST =  np.zeros((n1, n1));
+for i in range(0,n1) :
+    for j in range(0,n1) :
+        MAT_DIST[i,j] =  d[abs(j-i)] ;
+        
+#imshow(MAT_DIST**0.2);
+MAT2=mn/MAT_DIST;
+imshow( MAT2**0.2);
+
+# Computation of the correlation matrice:
+mc=np.corrcoef(MAT2);
+mc[np.isnan(mc)] = 0.0;
+
+mc2=np.corrcoef(mc);
+mc2[np.isnan(mc2)] = 0.0;
+
+imshow( mc2,interpolation='none');
+colorbar();
+savefig('chr3_CORRELATION2.png');
+```
+
+Example of plot for the human chromosome 3 with 100 kb bins and 2 iterations of correlation:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_CORRELATION2.png)
 
 
