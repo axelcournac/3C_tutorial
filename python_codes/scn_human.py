@@ -6,7 +6,7 @@ from pylab import *
     
 # Normalisation function
 # A is the matrix to normalise  
-# the treshold to remove bins from the normalization but not from the matrice  
+# the treshold to remove bins for the normalization (these bins are replaced by zeros vectors)
      
 def scn_func(A,threshold):    
     n1 = A.shape[0];
