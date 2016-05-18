@@ -135,11 +135,9 @@ chr3	178179845	0	53834	chr3	171257372	16	51648
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
 This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
 
-In this step, you need to assign a restriction fragment to every locus (chrm - position). This can be done like in the python code fragment_attribution.py. 
-
 ## Building of the contacts map
 
-From the contacts, 
+From the contacts, you can build a binned contacts map.
 
 
 ## Normalization of the data
@@ -154,15 +152,11 @@ histo_r(m.sum(axis=0),100)
 ```
 The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hist() ).   
 
-In the python code. 
-
-It should be noticed that this procedure does not conserve the symetry propertie of the matrix. To recover the symetry property you can use a simple line in python:
-
+It should be noticed that this procedure does not conserve the symetry property of the matrix. To recover the symetry property you can use a simple line in python:
 ```python
 mn=(mn+mn.T)/2;
 ```
-mn.T is the transposed matrice of mn. 
-
+where mn.T is the transposed matrice of mn. 
 
 
 ## Computation of genomic distance law
@@ -173,7 +167,7 @@ The computation thus consists in scanning every diagonal of the matrice and taki
 
 ## Computation of correlation matrices
 The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
-It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice. 
+It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice.  
 
 
 ## Directional Index tool to detect TADs
