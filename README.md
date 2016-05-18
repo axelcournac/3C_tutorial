@@ -180,6 +180,23 @@ This plot is important and must be computed at the very first steps of data proc
 It consists in computing the mean number of reads in function of the genomic distance separating the two loci. 
 The computation thus consists in scanning every diagonal of the matrice and taking the average of this sets of elements.
 
+```python
+import distance_law_human
+
+# mn: normalised matrice
+d=distance_law_human.dist_law(mn)
+plt.plot(d,label="Chr 3",linewidth=3.0);
+plt.loglog();
+plt.xlabel("Genomic distance in bins of 100kb");
+plt.ylabel("Contacts Frequency");
+plt.legend();
+savefig('chr3_distance_law.png');
+```
+Example of plot obtained for the chromosome 3:
+
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_distance_law.png)
+
+
 
 ## Computation of correlation matrices
 The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
