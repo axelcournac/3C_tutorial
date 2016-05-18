@@ -112,6 +112,7 @@ The 3rd and 6th fields correspond to the directions of the reads: 0 means in the
 You can assign a restriction fragment to each locus using the python code **fragment_attribution.py** ([`python_codes/fragment_attribution.py`](python_codes/fragment_attribution.py)):. 
 
 The command to enter to use it is: 
+
 python fragment_attribution.py [path for fasta files of genome] [Restriction enzyme]  [Alignment file]
 
 Ex: 
