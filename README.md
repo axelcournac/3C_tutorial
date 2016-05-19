@@ -247,6 +247,8 @@ This geometrical transformation allows to decompose the matrice into eigen value
 It has been shown that the first eigen vector corresponds to the 2 compartments partition of the genome. 
 It should be kept in mind that this is a first approximation of the 3D structure of a genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
+Example of plot for the human chromosome 3 with 100 kb bins (zoom at the end of the chromosome):
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_Eigen_bin100kb.png)
 
 ## Use of sparse formalism
 An alternative and interesting way to mathematically represent the data is the sparse formalism. It is very relevant for matrices in which most of the elements are zero which is ofter the case for human, mouse contacts maps. 
