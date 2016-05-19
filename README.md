@@ -21,9 +21,8 @@ For queries or help getting these running, you can contact me on mail or open an
 
 ### Dependencies
 
-Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
-It basically requires to have Python installed on your machine which is commonly installed on Unix-based systems. 
-For windows, you can have a look to https://www.python.org/downloads/windows/. Then, a few specific python modules are necessary for diverses operations on arrays and vizualisation. 
+Scripts will run on OS X and other Unix-based systems. It basically requires to have Python installed on your machine which is commonly installed on Unix-based systems. 
+For windows, you can have a look to https://www.python.org/downloads/windows/. Then, a few python modules are necessary for diverses operations on arrays and vizualisation. 
 
 #### Python
 * Numpy
@@ -38,8 +37,8 @@ For windows, you can have a look to https://www.python.org/downloads/windows/. T
 
 ## Raw data extraction and alignment
 #### Data extraction
-Raw data are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
-In this tutorial, we take as example one run of the replicat 2 of IMR90 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html). Raw data can be retreived at  http://www.ncbi.nlm.nih.gov/sra/SRX212173 (the identification number is SRR639031). 
+As example, we will use raw data that are deposited on Short Read Archive server at the following address **http://www.ncbi.nlm.nih.gov/sra**.
+We take as example one run of the replicat 2 of IMR90 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html). Raw data can be retreived at  http://www.ncbi.nlm.nih.gov/sra/SRX212173 (the identification number is SRR639031). 
 
 We used an SRA executable called fastq-dump from SRA to extract and split both mates of a library (to use it, you can go with your terminal to the directory containg the executables files by using the bash command cd).Then the program can be used like this:  /fastq-dump library_identification --split-3 -O /path_to_a_directory
 
@@ -50,24 +49,24 @@ We used an SRA executable called fastq-dump from SRA to extract and split both m
 
 #### Alignment
 
-Before aligning the reads on a reference genome, you need to index it, the line to enter is as follows: bowtie2-build [list of fasta files of your genome separated by comma] [name of index you want to give].
+For the alignement step, we will use the sofware Bowtie2. Before aligning the reads on a reference genome, it is necessary to index it, the line to enter is as follows: bowtie2-build [list of fasta files of your genome separated by comma] [name of index you want to give].
 
 ```bash
 bowtie2-build chr10.fa,chr11.fa,chr11_gl000202_random.fa,chr12.fa,chr13.fa,chr14.fa,chr15.fa,chr16.fa,chr17_ctg5_hap1.fa,chr17.fa,chr17_gl000203_random.fa,chr17_gl000204_random.fa,chr17_gl000205_random.fa,chr17_gl000206_random.fa,chr18.fa,chr18_gl000207_random.fa,chr19.fa,chr19_gl000208_random.fa,chr19_gl000209_random.fa,chr1.fa,chr1_gl000191_random.fa,chr1_gl000192_random.fa,chr20.fa,chr21.fa,chr21_gl000210_random.fa,chr22.fa,chr2.fa,chr3.fa,chr4_ctg9_hap1.fa,chr4.fa,chr4_gl000193_random.fa,chr4_gl000194_random.fa,chr5.fa,chr6_apd_hap1.fa,chr6_cox_hap2.fa,chr6_dbb_hap3.fa,chr6.fa,chr6_mann_hap4.fa,chr6_mcf_hap5.fa,chr6_qbl_hap6.fa,chr6_ssto_hap7.fa,chr7.fa,chr7_gl000195_random.fa,chr8.fa,chr8_gl000196_random.fa,chr8_gl000197_random.fa,chr9.fa,chr9_gl000198_random.fa,chr9_gl000199_random.fa,chr9_gl000200_random.fa,chr9_gl000201_random.fa,chrM.fa,chrUn_gl000211.fa,chrUn_gl000212.fa,chrUn_gl000213.fa,chrUn_gl000214.fa,chrUn_gl000215.fa,chrUn_gl000216.fa,chrUn_gl000217.fa,chrUn_gl000218.fa,chrUn_gl000219.fa,chrUn_gl000220.fa,chrUn_gl000221.fa,chrUn_gl000222.fa,chrUn_gl000223.fa,chrUn_gl000224.fa,chrUn_gl000225.fa,chrUn_gl000226.fa,chrUn_gl000227.fa,chrUn_gl000228.fa,chrUn_gl000229.fa,chrUn_gl000230.fa,chrUn_gl000231.fa,chrUn_gl000232.fa,chrUn_gl000233.fa,chrUn_gl000234.fa,chrUn_gl000235.fa,chrUn_gl000236.fa,chrUn_gl000237.fa,chrUn_gl000238.fa,chrUn_gl000239.fa,chrUn_gl000240.fa,chrUn_gl000241.fa,chrUn_gl000242.fa,chrUn_gl000243.fa,chrUn_gl000244.fa,chrUn_gl000245.fa,chrUn_gl000246.fa,chrUn_gl000247.fa,chrUn_gl000248.fa,chrUn_gl000249.fa,chrX.fa,chrY.fa hg19
 ```
-You can also download the most used ones on the following link: **http://bowtie-bio.sourceforge.net/bowtie2/index.shtml**
+You can also download the most used indexes on the following link: **http://bowtie-bio.sourceforge.net/bowtie2/index.shtml**
 
 We align the raw reads with the software bowtie2 with several options. Information can be found in the following reference manual (**http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml**).
 
-Examples of lines used to launch the alignment procedure:
+Examples of lines used to do the alignment procedure:
 ```bash
-bowtie2 -x /run/media/axel/Pasteur_Koszul/human_index_downloaded/hg19 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local -S p1.sam SRR639031_1.fastq 
+bowtie2 -x /run/media/axel/human_index_downloaded/hg19 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local -S p1.sam SRR639031_1.fastq 
 
-bowtie2 -x /run/media/axel/Pasteur_Koszul/human_index_downloaded/hg19 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local -S p2.sam SRR639031_2.fastq 
+bowtie2 -x /run/media/axel/human_index_downloaded/hg19 -p6 --sam-no-hd --sam-no-sq --quiet --local --very-sensitive-local -S p2.sam SRR639031_2.fastq
 ```
-We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). In this procedure, each read starts with a fixed lenght (i.e 20 bp), tries to align the read. If the read is correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
+Remark: We could have also aligned the reads with an iterative alignment procedure like in [hiclib] (https://bitbucket.org/mirnylab/hiclib). In this procedure, each read starts with a fixed lenght (i.e 20 bp), the aligner tries to find a correct (unambiguous) location. If the read can be correctly aligned, it is kept else the length is incremented (i.e by 5 bp) until a correct mapping can be found.
 It is important to align each mate idependently and then repair them  (Bowtie expects a certain distribution of distances between mates so the "pairs mode" of Bowtie is not recommanded for Hi-C data). 
-Here, some lines that can be used to do this task:
+Here, some lines that can be used to do this latter task:
 
 ```bash
 #  Keeping only the columns of the sam file that contain necessary information:
@@ -109,18 +108,18 @@ chr5 137488897 0 chr9 27468101 0
 chr3 178179845 0 chr3 171257372 16
 ```
 
-The 3rd and 6th fields correspond to the directions of the reads: 0 means in the same direction as the reference genome, 16 means in the opposite direction.
-You can assign a restriction fragment to each locus using the python code [`fragment_attribution.py`](python_codes/fragment_attribution.py):
+The 3rd and 6th fields correspond to the directions of the reads: 0 means in the same direction of the reference genome, 16 means in the opposite direction.
+You can also assign a restriction fragment to each locus using the python code [`fragment_attribution.py`](python_codes/fragment_attribution.py):
 
 The command to enter to use it is: 
 
-python fragment_attribution.py [path for fasta files of genome] [Restriction enzyme]  [Alignment file]
+python fragment_attribution.py [path of fasta files of the genome] [Restriction enzyme]  [Alignment file]
 
 Ex: 
 ```bash
 python fragment_attribution.py /run/media/axel/RSG3/human_genome/ HindIII /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat
 ```
-The indices start at 0 for every chromosome, you should have a file containing the indices:
+The indices start at 0 for every chromosome, you should have a file now containing the indices in 4th and 8th columns:
 ```
 chrX	104115113	16	29877	chr5	169107262	0	52159
 chr15	64627253	16	12632	chr15	64627696	0	12632
@@ -134,11 +133,11 @@ chr3	178179845	0	53834	chr3	171257372	16	51648
 
 #### Filtering of the data
 A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
-This procedure is optional and might be necessary when you want to study the structure of chromatin at short scales like several kb. 
+This procedure is optional and might be necessary when you want to study the structure of chromatin at very short scales like several kb. 
 
 ## Building of the contacts map
 
-From the contacts file, you can build a binned contacts map. We used the home-made python code [`Matrice_Creator.py`](python_codes/Matrice_Creator.py): that converts the alignment file inforamtions into a dictionary structure and then into an array of the chosen chromosome(s). In this code, there are 3 parameters you can modificate: 
+From the alignment file, you can build a binned contacts map. We used the home-made python code [`Matrice_Creator.py`](python_codes/Matrice_Creator.py): that converts the alignment file information into a dictionary structure and then into an array of the chosen chromosome(s). In this code, there are 3 parameters you can modify: 
 the size of the bin, the path of your output alignment file and the list of the chromosome(s) you want to display.
 
 For the human chromosome 3, you shoud have a picture looking like this:
@@ -147,25 +146,25 @@ For the human chromosome 3, you shoud have a picture looking like this:
 
 ## Normalization of the data
 We used the normalization procedure called SCN (for Sequential Component Normalization presented in http://www.biomedcentral.com/1471-2164/13/436). 
-This procedure assumes that every bin should be detected with the same strength. We divide each line by its sum then each column by its sum. We reiterate this loop several times. It has been shown that after several iterations, the matrice converged. 
-Before the iterations, poor interacting bins must be discarded and considered as non detectable bins. 
-To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine the threshold you can plot the distribution in the number of reads by doing the histogram:
+This procedure assumes that every bin should be detected with the same strength. We divide each line of the previous matrice by its sum then each column by its sum. We reiterate this loop several times. It has been shown that after several iterations, the matrice has converged. 
+Before the iterations, poor interacting bins must be discarded and considered as non detectable bins (due to experimental biases, unmapple sequences etc). 
+To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine this threshold, you can plot the distribution in the number of reads by doing the histogram:
 
 ```python
 from histo_r import *
-histo_r(m.sum(axis=0),100)
+histo_r(m.sum(axis=0),100);
 ```
-The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the results as a bar plot (it is an equivalent of the R function hist() ).  
+The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the result as a bar plot (it is an equivalent of the R function hist() ).  
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/histogram_chr3.png)
 
-It should be noticed that this procedure does not conserve the symetry property of the matrix. To recover the symetry property you can use a simple line in python:
+It should be noticed that this procedure does not conserve the symetry property of the matrix. To recover the symetry property, you can use a simple line in python:
 ```python
 mn=(mn+mn.T)/2;
 ```
 where mn.T is the transposed matrice of mn. 
 
-To normalise the raw contact map, we used the function scn_func in the module [scn_human](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/scn_human.py). 
+To normalise the raw contact map, we used the function scn_func coded in the module [scn_human](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/scn_human.py). 
 ```python
 import scn_human
 
@@ -187,6 +186,7 @@ The matrice elements can be viewed as relative frequencies of contacts between d
 This plot is important and must be computed at the very first steps of data processing. It reflects the polymer behaviour of the chromatin and thus allows to check the presence or absence of 3D signal. 
 It consists in computing the mean number of reads in function of the genomic distance separating the two loci. 
 The computation thus consists in scanning every diagonal of the matrice and taking the average of this sets of elements.
+We coded this computation in the function [distance_law_human](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/distance_law_human.py). 
 
 ```python
 from pylab import *
@@ -208,8 +208,8 @@ Example of plot obtained for the chromosome 3:
 
 
 ## Computation of correlation matrices
-The correlation matrice is very often computed in Hi-C data analysis. Even if not present in final publication, it can give a more visible image of the structures that can be detected especially domains structures (squares in the contacts maps). It consists in looking for correlation in the contacts patterns between each line and column. 
-It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice.  
+The correlation matrice is often computed in Hi-C data analysis. Even if not always present in final publication, it can render  more visible structures that are present in the data especially domains structures (squares in the contacts maps). It consists in looking for correlation in the shared neighbors between each line and column. 
+It is simply computed by taking the Pearson Coefficient (or another correlation coefficient) between each line and each column of a matrice coded in the function corrcoef from Numpy.
 
 ```python
 n1=mn.shape[0];
@@ -242,6 +242,7 @@ Example of plot for the human chromosome 3 with 100 kb bins and 2 iterations of 
 ## Directional Index tool to detect TADs
 This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
 It consists in doing a paired T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
+We coded this computation in the function [directional_indice](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/directional_indice.py). 
 
 ```python
 # Computation and plot of Directional Index:
@@ -279,7 +280,7 @@ Example of plot for the human chromosome 3 with 100 kb bins and DI carried out a
 
 ## Decomposition into eigen vectors 
 This geometrical transformation allows to decompose the matrice into eigen values and vectors. It is a way to simplify the data or at least to decrease the dimentionality of the mathematical object. 
-It has been shown that the first eigen vector corresponds to the 2 compartments partition of the genome. 
+It has been shown that the first eigen vector corresponds to the 2 compartments partition signal of the genome. 
 It should be kept in mind that this is a first approximation of the 3D structure of a genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
 ```python
