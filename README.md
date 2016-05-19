@@ -237,6 +237,11 @@ This tool is commonly used in Hi-C data analysis. It looks for change in the dir
 It consists in doing a paired T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
 
 
+Example of plot for the human chromosome 3 with 100 kb bins and DI carried out at the scale of 2Mb:
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_DI_bin100kb.png)
+
+
+
 ## Decomposition into eigen vectors 
 This geometrical transformation allows to decompose the matrice into eigen values and vectors. It is a way to simplify the data or at least to decrease the dimentionality of the mathematical object. 
 It has been shown that the first eigen vector corresponds to the 2 compartments partition of the genome. 
