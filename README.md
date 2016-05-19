@@ -275,6 +275,34 @@ This geometrical transformation allows to decompose the matrice into eigen value
 It has been shown that the first eigen vector corresponds to the 2 compartments partition of the genome. 
 It should be kept in mind that this is a first approximation of the 3D structure of a genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
+```python
+# Computation of eigen vectors:
+(V,D) = sc.linalg.eig(mc);
+plot(D[:,0]);
+
+# Plot of contacts Map and Eigen vector:
+gs = gridspec.GridSpec(2, 1, height_ratios=[5,1] );
+ax0 = plt.subplot(gs[0]);
+ax0.imshow(mn**0.2,interpolation="none")
+ax0.set_title("Contacts Map");
+
+ax2 = plt.subplot(gs[1], sharex=ax0 );
+b1=0;
+b2=len(D[:,0]);
+borders = list(range(b1,b2));
+borders2 = D[:,0] 
+borders2 = array(borders2[:,0]);
+
+ax2.set_xlim([b1, b2]);
+#ax2.set_ylim([-2.0, 2.0]);
+ax2.fill_between( borders, 0,borders2, color='darkblue');
+ax2.fill_between( borders, 0,borders2,borders2<0 ,color='darkblue' );
+ax2.set_xlabel("Position along the genome (in bins of 200kb)");
+ax2.set_ylabel("Eigen vector");
+savefig('chr3_Eigen_bin100kb.png');
+```
+
+
 Example of plot for the human chromosome 3 with 100 kb bins (zoom at the end of the chromosome):
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_Eigen_bin100kb.png)
 
