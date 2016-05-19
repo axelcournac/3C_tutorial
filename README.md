@@ -166,7 +166,12 @@ where mn.T is the transposed matrice of mn.
 To normalise the raw contact map, we used the function scn_func in the module [scn_human](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/scn_human.py). 
 ```python
 import scn_human
+
 mn=scn_human.scn_func(MATRICE,1500);
+imshow(mn**0.2,interpolation="none");
+colorbar();
+savefig('chr3_NORMALISED.png');
+np.savetxt('chr3_NORMALISED.txt',MATRICE);
 ```
 
 The normalised contacts map should look like this:
