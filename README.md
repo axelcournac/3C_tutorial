@@ -138,7 +138,8 @@ This procedure is optional and might be necessary when you want to study the str
 
 ## Building of the contacts map
 
-From the contacts, you can build a binned contacts map.
+From the contacts file, you can build a binned contacts map. We used the home-made python code [`Matrice_Creator.py`](python_codes/Matrice_Creator.py): that converts the alignment file inforamtions into a dictionary structure and then into an array of the chosen chromosome(s). 
+
 For the human chromosome 3, uou shoud have a picture looking like this:
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_RAW.png)
