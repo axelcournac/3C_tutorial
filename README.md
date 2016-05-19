@@ -75,8 +75,9 @@ awk '{print $1,$3,$4,$2,$5;}' p1.sam > p1.sam.0
 awk '{print $1,$3,$4,$2,$5;}' p2.sam > p2.sam.0
 
 # Sort according to the read identification to have both mates in the same order
-sort -d -k1 p1.sam.0 > p1.sam.0.sorted
-sort -d -k1 p2.sam.0 > p2.sam.0.sorted
+# if sort does not -V option try -d
+sort -V -k1 p1.sam.0 > p1.sam.0.sorted
+sort -V -k1 p2.sam.0 > p2.sam.0.sorted
 
 # Pairing of both mates in a single file
 paste p1.sam.0.sorted p2.sam.0.sorted > p1_p2_merged
