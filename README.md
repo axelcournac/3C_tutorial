@@ -236,6 +236,34 @@ Example of plot for the human chromosome 3 with 100 kb bins and 2 iterations of 
 This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
 It consists in doing a paired T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
 
+```python
+# Computation and plot of Directional Index:
+M = np.corrcoef(mn);
+n1 = M.shape[0];
+scale=20;
+DI = directional_indice.directional(M,scale).T;
+
+# PLOT of contacts Map and Directional Index:
+gs = gridspec.GridSpec(2, 1, height_ratios=[5,1] );  #  to have several subplots on the same graph
+ax0 = plt.subplot(gs[0]);
+ax0.imshow(mn**0.2,interpolation="none")
+ax0.set_title("Contacts Map");
+
+ax2 = plt.subplot(gs[1], sharex=ax0);
+b1=0;
+b2=len(DI.T);
+borders = list(range(b1,b2));
+borders2 = DI.T 
+borders2 = array(borders2[:,0]);
+
+ax2.set_xlim([b1, b2]);
+ax2.set_ylim([-2.0, 2.0]);
+ax2.fill_between( borders, 0,borders2, color='red' );
+ax2.fill_between( borders, 0,borders2,borders2<0 ,color='green' );
+ax2.set_ylabel("DI scale = 2Mb)");
+savefig('chr3_DI_bin100kb.png');
+```
+
 
 Example of plot for the human chromosome 3 with 100 kb bins and DI carried out at the scale of 2Mb:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_DI_bin100kb.png)
