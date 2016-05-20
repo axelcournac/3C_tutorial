@@ -17,7 +17,7 @@ For queries or help getting these running, you can contact me on mail or open an
 * [Directional Index tool to detect TADs](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#directional-index-tool-to-detect-tads)
 * [Decomposition into eigen vectors](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#decomposition-into-eigen-vectors)
 * [Use of sparse formalism](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#use-of-sparse-formalism)
-
+* [Miscellaneous](https://github.com/axelcournac/3C_tutorial/blob/master/README.md#miscellaneous)
 
 ### Dependencies
 
@@ -319,4 +319,19 @@ An alternative and interesting way to mathematically represent the data is the s
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/sparse.png)
 
 In python, functions implemented for the use of sparse formalism can be found in the module scipy.
+
+
+## Miscellaneous
+From the contacts map, you can do a kind of 4C plot of a position of interest by simply select the corresponding line in the matrix:
+
+```python
+plot(mn[ int(1850000/BIN),: ] );
+xlabel("Postion along the chromosome in bins of 100kb")
+ylabel("Normalised Score")
+```
+
+
+
+
+
 
