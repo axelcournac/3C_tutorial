@@ -327,8 +327,12 @@ From the contacts map, you can do a kind of 4C plot of a position of interest by
 ```python
 plot(mn[ int(1850000/BIN),: ] );
 xlabel("Postion along the chromosome in bins of 100kb")
-ylabel("Normalised Score")
+ylabel("Normalised Score");
+savefig('4Cplot_chr3.png');
 ```
+Example of 4C plot from the normalised contacts map for the position 
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/4Cplot_chr3.png)
+
 
 
 
