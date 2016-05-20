@@ -325,12 +325,12 @@ In python, functions implemented for the use of sparse formalism can be found in
 From the contacts map, you can do a kind of 4C plot of a position of interest by simply select the corresponding line in the matrix:
 
 ```python
-plot(mn[ int(1850000/BIN),: ] );
+plot(mn[ int(37000000/BIN),: ] );
 xlabel("Postion along the chromosome in bins of 100kb")
 ylabel("Normalised Score");
 savefig('4Cplot_chr3.png');
 ```
-Example of 4C plot from the normalised contacts map for the position 1850000 bp on the chromosome 3:
+Example of 4C plot from the normalised contacts map for the position 37000000 bp on the chromosome 3:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/4Cplot_chr3.png)
 
 
