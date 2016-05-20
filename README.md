@@ -330,7 +330,7 @@ xlabel("Postion along the chromosome in bins of 100kb")
 ylabel("Normalised Score");
 savefig('4Cplot_chr3.png');
 ```
-Example of 4C plot from the normalised contacts map for the position 
+Example of 4C plot from the normalised contacts map for the position 1850000 bp on the chromosome 3:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/4Cplot_chr3.png)
 
 
