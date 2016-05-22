@@ -133,7 +133,7 @@ chr3	178179845	0	53834	chr3	171257372	16	51648
 
 #### Filtering of the data
 A check for the proportion of uncrosslinked events (uncuts, loops...) can be carried out at this stage.  
-With these information, one can remove uninformativ events more cautiously then just removing all events below 10 kb. This filtering is optional and might be necessary when you want to study the structure of chromatin at very short scales like several kb. 
+With these information, one can remove uninformative events more cautiously then just removing all events below 10 kb. This filtering is optional and might be necessary when you want to study the structure of chromatin at very short scales like several kb. 
 We used the home-made python code [`library_events.py`](python_codes/library_events.py):
 ```bash
 python library_events.py /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat.indices
