@@ -74,7 +74,7 @@ awk '{print $1,$3,$4,$2,$5;}' p1.sam > p1.sam.0
 awk '{print $1,$3,$4,$2,$5;}' p2.sam > p2.sam.0
 
 # Sort according to the read identification to have both mates in the same order
-# if sort does not -V option try -d
+# if sort does not have -V option try -d
 sort -V -k1 p1.sam.0 > p1.sam.0.sorted
 sort -V -k1 p2.sam.0 > p2.sam.0.sorted
 
@@ -185,7 +185,6 @@ colorbar();
 savefig('chr3_NORMALISED.png');
 np.savetxt('chr3_NORMALISED.txt',MATRICE);
 ```
-
 The normalised contacts map should look like this:
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_NORMALISED.png)
