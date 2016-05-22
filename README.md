@@ -134,11 +134,16 @@ chr3	178179845	0	53834	chr3	171257372	16	51648
 #### Filtering of the data
 A check for the proportion of uncrosslinked events (uncuts, loops...) can be carried out at this stage.  
 With these information, one can remove uninformativ events more cautiously then just removing all events below 10 kb. This filtering is optional and might be necessary when you want to study the structure of chromatin at very short scales like several kb. 
+We used the home-made python code [`library_events.py`](python_codes/library_events.py):
+```bash
+python library_events.py /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat.indices
+```
+
 You can have a look to the behaviors of the different pairs of reads taking into account the directions of the reads with this kind of plots:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/behavior_events2.png)
 
 Then, you can count the different types of events, it gives information about the quality of your library preparation.
-![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/PieChart_events2.png)
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/PieChart_events3.png)
 
 
 ## Building of the contacts map
