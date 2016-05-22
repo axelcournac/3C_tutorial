@@ -132,9 +132,9 @@ chr3	178179845	0	53834	chr3	171257372	16	51648
 ```
 
 #### Filtering of the data
-A removal of uncrosslinked events (uncuts, loops...) can be applied at this stage.  
-This procedure is optional and might be necessary when you want to study the structure of chromatin at very short scales like several kb. 
-You can have a look to the pbehaviors of the different pairs of reads taking into account the directions of the reads with this kind of plots:
+A check for the proportion of uncrosslinked events (uncuts, loops...) can be carried out at this stage.  
+With these information, one can remove uninformativ events more cautiously then just removing all events below 10 kb. This filtering is optional and might be necessary when you want to study the structure of chromatin at very short scales like several kb. 
+You can have a look to the behaviors of the different pairs of reads taking into account the directions of the reads with this kind of plots:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/behavior_events2.png)
 
 Then, you can count the different types of events, it gives information about the quality of your library preparation.
