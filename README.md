@@ -170,12 +170,6 @@ The function histo_r(V,N) makes a histogram of the vector V in N bins and plots 
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/histogram_chr3.png)
 
-It should be noticed that this procedure does not conserve the symetry property of the matrix. To recover the symetry property, you can use a simple line in python:
-```python
-mn=(mn+mn.T)/2;
-```
-where mn.T is the transposed matrice of mn. 
-
 To normalise the raw contact map, we used the function scn_func coded in the module [scn_human](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/scn_human.py). 
 ```python
 import scn_human
@@ -191,7 +185,11 @@ The normalised contacts map should look like this:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_NORMALISED.png)
 
 The matrice elements can be viewed as relative frequencies of contacts between different loci (the scores go now from 0 to 1).
-
+It should be noticed that this procedure does not conserve the symetry property of the matrix. To recover the symetry property, you can use a simple line in python:
+```python
+mn=(mn+mn.T)/2;
+```
+where mn.T is the transposed matrice of mn. 
 
 ## Computation of genomic distance law
 This plot is important and must be computed at the very first steps of data processing. It reflects the polymer behaviour of the chromatin and thus allows to check the presence or absence of 3D signal. 
