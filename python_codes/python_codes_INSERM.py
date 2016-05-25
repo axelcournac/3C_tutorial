@@ -105,3 +105,9 @@ ax2.fill_between( borders, 0,borders2,borders2<0 ,color='darkblue' );
 ax2.set_xlabel("Position along the genome (in bins of 200kb)");
 ax2.set_ylabel("Eigen vector");
 savefig('chr3_Eigen_bin100kb.png');
+
+# 4C plot:
+plot(mn[ int(1850000/BIN),: ] )
+xlabel("Postion along the chromosome in bins of 100kb")
+ylabel("Normalised Score")
+savefig('4Cplot_chr3.png');
