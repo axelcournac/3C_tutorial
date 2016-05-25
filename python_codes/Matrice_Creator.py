@@ -45,7 +45,7 @@ with open("/run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat") as f: # o
 list_chr = ["chr3"];  # List of chromosomes you want to display
 N_BINS=0;
 for chr in list_chr:
-    N_BINS=N_BINS+maxi[chr]+2;
+    N_BINS=N_BINS+ maxi[chr]+1;
     print chr,maxi[chr] ;
 # 
 print N_BINS;
@@ -56,11 +56,10 @@ bin_mat2=0;
 MATRICE=np.zeros( (N_BINS,N_BINS) );
 
 for chr1 in list_chr :
-    for bin1 in range(0,maxi[chr1]+1) :
-        bin_mat1 +=1;
+    for bin1 in range(0,maxi[chr1]) :
         bin_mat2=0;
         for chr2 in list_chr  :  
-            for bin2 in range(0,maxi[chr2]+1) :
+            for bin2 in range(0,maxi[chr2]) :
                 bin_mat2 +=1;
                 key1=(chr1, bin1, chr2, bin2);
                 if key1 in mat:
@@ -69,6 +68,7 @@ for chr1 in list_chr :
                 else:
                     mat[key1] = 0;
                     MATRICE[bin_mat1,bin_mat2]= 0;
+        bin_mat1 +=1;
 
 # Plot of the matrice and savings:
 imshow( MATRICE**0.2,interpolation="none");
