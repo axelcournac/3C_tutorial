@@ -18,26 +18,28 @@ print "Path for fasta files of genome (ex: /run/media/axel/human_genome/), Restr
 
 #path="/run/media/axel/RSG3/human_genome/";   #  path containing the fasta files of the chromosomes 
 path=sys.argv[1];
-os.chdir(path);
 
-list_chrms1 =  glob.glob("*.fa");
-list_chrms2 =  glob.glob("*.fasta");
-list_chrms=list_chrms1+list_chrms2;
+list_chrms1 =  glob.glob(path+"*.fa");
+list_chrms2 =  glob.glob(path+"*.fasta");
+list_chrms3 =  glob.glob(path+"*.fas");
+list_chrms=list_chrms1+list_chrms2+list_chrms3;
+print list_chrms; 
 
 #enz=HindIII;   #   Restriction enzyme used in the experiment 
 enz=sys.argv[2];
 print "Enzyme used:"+str(enz);
+print "Output file used:";
+print sys.argv[3]
 
 rb = RestrictionBatch([enz]);    #  Restriction batch containing the restriction enzyme
 restriction_table={};
 
 for chr_file in list_chrms :
-    chr_name= chr_file.replace(".fa", "");
-    chr_name= chr_name.replace(".fasta", "");
+    record = SeqIO.read(open(chr_file), "fasta"); 
+    print(record.id);
     print "Cutting the following chromosome:"
-    print chr_name;
-
-    record = SeqIO.read(open(chr_file), "fasta");    
+    chr_name=record.id;
+    print chr_name;   
     # Building of the restriction map:
     #map_restriction = enz.search(record.seq);
     map_restriction = rb.search(record.seq);
@@ -52,6 +54,8 @@ for chr_file in list_chrms :
     # Adding end position of the chromosome to the end positions of restriction fragments:
     end_positions = np.insert(end_positions, len(end_positions), len(record));
     restriction_table[chr_name] = vstack((start_positions,end_positions));
+    print "Number of restriction sites for "+chr_name+" for the enzyme "+str(enzyme);
+    print len(map_restriction);
 
 print "Restriction maps of all chromosomes are now in memory!";
 
@@ -70,7 +74,6 @@ def find_frag(chrm,locus) :
         elif locus >= T[1,index] :
             bottom = index + 1;    
     return indice
-
 
 # Reading of the output file from the alignment 
 fout = open(sys.argv[3]+".indices","w")#  output file that will contain the indices 
@@ -91,5 +94,3 @@ with open(sys.argv[3]) as f: # open the file for reading
         fout.write(str(chr1)+"\t"+str(locus1)+"\t"+str(sens1)+"\t"+str(indice1)+"\t"+str(chr2)+"\t"+str(locus2)+"\t"+str(sens2)+"\t"+str(indice2)+"\n"); 
 
 fout.close();
-
-
