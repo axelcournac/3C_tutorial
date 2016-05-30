@@ -24,7 +24,7 @@ For queries or help getting these running, you can send email or open an issue a
 Scripts will run on OS X and other Unix-based systems. It basically requires to have Python installed on your machine which is commonly installed on Unix-based systems. 
 For windows, you can have a look to https://www.python.org/downloads/windows/. Then, a few python modules are necessary for diverses operations on arrays and vizualisation. 
 
-#### Python
+#### Python (>=2.7)
 * Numpy
 * Matplotlib (>=1.0)
 * Scipy
