@@ -26,7 +26,7 @@ For windows, you can have a look to https://www.python.org/downloads/windows/. T
 
 #### Python
 * Numpy
-* Matplotlib
+* Matplotlib (>=1.0)
 * Scipy
 * Biopython
 
@@ -143,7 +143,8 @@ You can have a look to the behaviors of the different pairs of reads taking into
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/behavior_events2.png)
 
-Then, you can count the different types of events, it gives information about the quality of your library preparation.
+At this step, the program will ask you the two thresholds for the uncuts and loops events that you can determine from the previous plot.
+Then, the code counts the different types of events, it gives information about the quality of your library preparation.
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/PieChart_events3.png)
 
 
