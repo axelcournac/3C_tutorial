@@ -38,10 +38,10 @@ with open(sys.argv[1]) as f: # open the file for reading (just the first 1 000 0
 
 # PLot:
 plt.xlim([0, 15]);
-plot(range(1,len(noccurences[0,:])+1),noccurences[0,:],"o-",label="++",linewidth=2.0);
-plot(range(1,len(noccurences[0,:])+1),noccurences[1,:],"o-",label="--",linewidth=2.);
-plot(range(1,len(noccurences[0,:])+1),noccurences[2,:],"o-",label="+-",linewidth=2.);
-plot(range(1,len(noccurences[0,:])+1),noccurences[3,:],"o-",label="-+",linewidth=2.);
+plot(range(1,len(noccurences[0,:])+1),noccurences[0,:],"o-",label="++ (weirds)",linewidth=2.0);
+plot(range(1,len(noccurences[0,:])+1),noccurences[1,:],"o-",label="-- (weirds)",linewidth=2.);
+plot(range(1,len(noccurences[0,:])+1),noccurences[2,:],"o-",label="+- (uncuts)",linewidth=2.);
+plot(range(1,len(noccurences[0,:])+1),noccurences[3,:],"o-",label="-+ (loops)",linewidth=2.);
 grid();
 plt.xlabel('Number of restriction fragment(s)');
 plt.ylabel('Number of events');
