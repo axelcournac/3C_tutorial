@@ -164,7 +164,10 @@ Before the iterations, poor interacting bins must be discarded and considered as
 To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine this threshold, you can plot the distribution in the number of reads by doing the histogram:
 
 ```python
+from pylab import *
 from histo_r import *
+
+m=loadtxt("chr3_RAW.txt");
 histo_r(m.sum(axis=0),100);
 ```
 The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the result as a bar plot (it is an equivalent of the R function hist() ).  
