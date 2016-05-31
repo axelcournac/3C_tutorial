@@ -161,7 +161,7 @@ For the human chromosome 3, you shoud have a picture looking like this:
 We used the normalization procedure called SCN (for Sequential Component Normalization presented in http://www.biomedcentral.com/1471-2164/13/436). 
 This procedure assumes that every bin should be detected with the same strength. We divide each line of the previous matrice by its sum then each column by its sum. We reiterate this loop several times. It has been shown that after several iterations, the matrice has converged. 
 Before the iterations, poor interacting bins must be discarded and considered as non detectable bins (due to experimental biases, unmapple sequences etc). 
-To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine this threshold, you can plot the distribution in the number of reads by doing the histogram:
+To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine this threshold, you can plot the distribution in the number of reads by doing the histogram in a python terminal: 
 
 ```python
 from pylab import *
