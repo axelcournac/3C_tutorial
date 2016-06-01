@@ -167,8 +167,8 @@ To do that, a threshold is given as an argument to the SCN function so that ever
 from pylab import *
 from histo_r import *
 
-m=loadtxt("chr3_RAW.txt");
-histo_r(m.sum(axis=0),100);
+MATRICE=loadtxt("chr3_RAW.txt");
+histo_r(MATRICE.sum(axis=0),100);
 ```
 The function histo_r(V,N) makes a histogram of the vector V in N bins and plots the result as a bar plot (it is an equivalent of the R function hist() ).  
 
