@@ -163,11 +163,9 @@ python Matrice_Creator.py /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.
 
 You should have a picture with all the chromosomes :
 
+![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/MAT_RAW.png)
 
-
-In this code, you can modify the list of the chromosome(s) you want to display.
-
-For the human chromosome 3, you shoud have a picture looking like this:
+In this code, you can modify the list of the chromosome(s) you want to display. For example, you can display only the human chromosome 3 (list_chr = ["chr3"]) you shoud have a picture looking like this:
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/chr3_RAW.png)
 
