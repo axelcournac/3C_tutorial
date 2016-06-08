@@ -68,6 +68,8 @@ lrange_intra=0;lrange_inter=0;
 n_mito=0;
 
 i=0;
+fout = open(sys.argv[1]+".filtered","w")
+
 with open(sys.argv[1]) as f: # open the file for reading
     for line in f: # iterate over each line
         i=i+1;
@@ -90,10 +92,15 @@ with open(sys.argv[1]) as f: # open the file for reading
                 nb_uncuts+=1;
             else :
                 lrange_intra+=1;
+                fout.write(str(chr1)+"\t"+str(locus1)+"\t"+str(sens1)+"\t"+str(indice1)+"\t"+str(chr2)+"\t"+str(locus2)+"\t"+str(sens2)+"\t"+str(indice2)+"\n"); 
         if chr1 != chr2 :
             lrange_inter+=1;
+            fout.write(str(chr1)+"\t"+str(locus1)+"\t"+str(sens1)+"\t"+str(indice1)+"\t"+str(chr2)+"\t"+str(locus2)+"\t"+str(sens2)+"\t"+str(indice2)+"\n"); 
         if bool(chr1 == "chrM") ^ bool(chr2 =="chrM" ) :
             n_mito+=1;
+            
+fout.close();
+print "Output file filtered of uncuts, loops... events done!";
 
 if lrange_inter > 0:
     ratio_inter=float(lrange_inter) / float(lrange_intra+lrange_inter) *100.;
