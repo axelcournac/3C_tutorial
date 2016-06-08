@@ -119,7 +119,7 @@ Ex:
 ```bash
 python fragment_attribution.py /run/media/axel/RSG3/human_genome/ HindIII /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat
 ```
-Fasta files must have the possible following extentions: .fa, .fasta, .fas or fna. 
+Fasta files for different chromosomes must have the possible following extentions: .fa, .fasta, .fas or fna. 
 The indices start at 0 for every chromosome, you should have a file now containing the indices in 4th and 8th columns:
 ```
 chrX	104115113	16	29877	chr5	169107262	0	52159
