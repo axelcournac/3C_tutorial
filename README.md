@@ -155,7 +155,8 @@ A file where non-crosslinked events have been removed is created and name output
 ## Building of the contacts map
 
 From the alignment file, you can build a binned contacts map. We used the home-made python code [`Matrice_Creator.py`](python_codes/Matrice_Creator.py): that converts the alignment file information into a dictionary structure and then into an array of the chosen chromosome(s). 
-There are two arguments to enter the path of your output alignemnt file and the size of the bin (in bp) you want.
+There are two arguments to enter: the path of your output alignment file and the size of the bin (in bp).
+
 Ex:
 ```bash
 python Matrice_Creator.py /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat.indices.filtered  1000000
