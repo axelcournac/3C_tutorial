@@ -1,22 +1,25 @@
 # -*- coding: utf-8 -*-
 """
 To convert an alignment output file into a matrice object. 
+author: Axel KournaK
 """
 import numpy as np
 import matplotlib
 from pylab import *
+import os
+import sys
 
-BIN= 100000;    # Size of the bin to build the contacts map 
+BIN= int(sys.argv[2]);    # Size (in bp) of the bin to build the contacts map 
 mat={};   # dictionary object to keep in memory all the contacts
 maxi={};  # dictionary object to keep in memory the lenghts of the chromosomes (in bins) 
 i=0;
 
-with open("/run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat") as f: # open the file for reading output alignment file
+with open(sys.argv[1]) as f: # open the file for reading output alignment file
     for line in f: # iterate over each line
         i=i+1;
         if i % 1000000 == 0:
-            print i;
-        chr1, locus1, sens1, chr2, locus2, sens2 = line.split(); # split it by whitespace
+            print str(i)+" lines parsed.";
+        chr1, locus1, sens1,indice1, chr2, locus2, sens2,indice2 = line.split(); # split it by whitespace
         locus1=int(locus1);sens1=int(sens1);
         locus2=int(locus2);sens2=int(sens2); 
         bin1 = int(locus1 /  BIN);
@@ -42,7 +45,9 @@ with open("/run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat") as f: # o
             maxi[chr2] =  bin2;
  
 # Check for the maximum of bins:  
-list_chr = ["chr3"];  # List of chromosomes you want to display
+list_chr = maxi.keys();   #  by default all the chromosomes of the organism
+#list_chr = ["chr3"];  # or list of subset of chromosomes you want to display
+
 N_BINS=0;
 for chr in list_chr:
     N_BINS=N_BINS+ maxi[chr]+1;
@@ -73,5 +78,5 @@ for chr1 in list_chr :
 # Plot of the matrice and savings:
 imshow( MATRICE**0.2,interpolation="none");
 colorbar();
-savefig('chr3_RAW.png');
-np.savetxt('chr3_RAW.txt',MATRICE);
+savefig('MAT_RAW.png');
+np.savetxt('MAT_RAW.txt',MATRICE);
