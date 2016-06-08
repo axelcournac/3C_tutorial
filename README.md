@@ -150,11 +150,22 @@ Then, the code counts the different types of events, it gives information about 
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/PieChart_events.png)
 
+A file where non-crosslinked events have been removed is created and name output_alignment_idpt.dat.indices.filtered. 
 
 ## Building of the contacts map
 
-From the alignment file, you can build a binned contacts map. We used the home-made python code [`Matrice_Creator.py`](python_codes/Matrice_Creator.py): that converts the alignment file information into a dictionary structure and then into an array of the chosen chromosome(s). In this code, there are 3 parameters you can modify: 
-the size of the bin, the path of your output alignment file and the list of the chromosome(s) you want to display.
+From the alignment file, you can build a binned contacts map. We used the home-made python code [`Matrice_Creator.py`](python_codes/Matrice_Creator.py): that converts the alignment file information into a dictionary structure and then into an array of the chosen chromosome(s). 
+There are two arguments to enter the path of your output alignemnt file and the size of the bin (in bp) you want.
+Ex:
+```bash
+python Matrice_Creator.py /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat.indices.filtered  1000000
+```
+
+You should have a picture with all the chromosomes :
+
+
+
+In this code, you can modify the list of the chromosome(s) you want to display.
 
 For the human chromosome 3, you shoud have a picture looking like this:
 
