@@ -139,6 +139,7 @@ We used the home-made python code [`library_events.py`](python_codes/library_eve
 python library_events.py /run/media/axel/RSG3/IMR90_data/output_alignment_idpt.dat.indices
 ```
 
+
 You can have a look to the behaviors of the different pairs of reads taking into account the directions of the reads with this kind of plots:
 
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/behavior_events_annotated.png)
