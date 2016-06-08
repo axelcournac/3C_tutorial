@@ -22,6 +22,7 @@ path=sys.argv[1];
 list_chrms1 =  glob.glob(path+"*.fa");
 list_chrms2 =  glob.glob(path+"*.fasta");
 list_chrms3 =  glob.glob(path+"*.fas");
+list_chrms4 =  glob.glob(path+"*.fna");
 list_chrms=list_chrms1+list_chrms2+list_chrms3;
 print list_chrms; 
 
