@@ -2,7 +2,7 @@
 
 
 This document presents several codes and simple command lines for the processing, vizualisation and primary analysis of 3C/Hi-C datasets.
-These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, Paris at Pasteur Institut.
+These codes were used during the INSERM workshop "Capturing chromosone conformation: toward a 3D view of genome regulation", May 9-13, 2016 in Paris at Pasteur Institut.
 
 For queries or help getting these running, you can send email or open an issue at the github repository.
 
