@@ -45,7 +45,7 @@ with open(sys.argv[1]) as f: # open the file for reading output alignment file
             maxi[chr2] =  bin2;
  
 # Check for the maximum of bins:  
-list_chr = maxi.keys();   #  by default all the chromosomes of the organism
+list_chr = sort(maxi.keys());   #  by default all the chromosomes of the organism
 #list_chr = ["chr3"];  # or list of subset of chromosomes you want to display
 
 N_BINS=0;
