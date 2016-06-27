@@ -10,8 +10,8 @@ import numpy as np
 
 def dist_law(A):
     n1 = A.shape[0];
-    print "Size of the matrix entetered for the genomic distance law:"
-    print n1;
+    print("Size of the matrix entetered for the genomic distance law:")
+    print(n1)
     dist = np.zeros((n1, 1));
     for nw in range(0,n1) :   # scales
         somme = [];         
