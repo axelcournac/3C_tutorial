@@ -15,7 +15,7 @@ with open(sys.argv[1]) as f: # open the file for reading (just the first 1 000 0
     for line in f: 
         i=i+1;
         if i % 1000000 == 0:
-            print i;
+            print(i)
             break
         chr1, locus1, sens1, indice1, chr2, locus2, sens2, indice2 = line.split() # split it by whitespace
         locus1=int(locus1);sens1=int(sens1);indice1=int(indice1);
@@ -51,10 +51,10 @@ savefig("behavior_events.png");
 show();
 
 #  Scanning the alignment file again and count the different events with the determined thresholds:
-print "Enter threshold for the uncuts events (+-):"; 
+print("Enter threshold for the uncuts events (+-):")
 thr_uncut= raw_input();
 thr_uncut=int(thr_uncut);
-print "Enter threshold for the loops events (-+):";
+print("Enter threshold for the loops events (-+):")
 thr_loop= raw_input();
 thr_loop= int(thr_loop);
 
@@ -74,7 +74,7 @@ with open(sys.argv[1]) as f: # open the file for reading
     for line in f: # iterate over each line
         i=i+1;
         if i % 1000000 == 0:
-            print i;
+            print(i)
         chr1, locus1, sens1, indice1, chr2, locus2, sens2, indice2 = line.split() # split it by whitespace
         locus1=int(locus1);sens1=int(sens1);indice1=int(indice1);
         locus2=int(locus2);sens2=int(sens2);indice2=int(indice2);
@@ -100,7 +100,7 @@ with open(sys.argv[1]) as f: # open the file for reading
             n_mito+=1;
             
 fout.close();
-print "Output file filtered of uncuts, loops... events done!";
+print("Output file filtered of uncuts, loops... events done!")
 
 if lrange_inter > 0:
     ratio_inter=float(lrange_inter) / float(lrange_intra+lrange_inter) *100.;
