@@ -11,8 +11,8 @@ import math
 
 def directional(A, nw):
     n1 = A.shape[0]  
-    print "Size of the matrix entetered for the directional index:"
-    print n1;
+    print("Size of the matrix entetered for the directional index:")
+    print(n1)
     signal1 = np.zeros((n1, 1));
     
     for i in range(0,n1) :
