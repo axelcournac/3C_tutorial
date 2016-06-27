@@ -89,7 +89,7 @@ with open(sys.argv[3]) as f: # open the file for reading
     for line in f: # iterate over each line
         i=i+1;
         if i % 1000000 == 0:
-            print(str(i)+" lines have been attributed restriction fragments.";
+            print(str(i)+" lines have been attributed restriction fragments.")
         chr1, locus1, sens1, chr2, locus2, sens2 = line.split(); # split it by whitespace
         locus1=int(locus1);sens1=int(sens1);
         locus2=int(locus2);sens2=int(sens2);        
