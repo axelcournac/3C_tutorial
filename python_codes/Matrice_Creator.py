@@ -18,7 +18,7 @@ with open(sys.argv[1]) as f: # open the file for reading output alignment file
     for line in f: # iterate over each line
         i=i+1;
         if i % 1000000 == 0:
-            print str(i)+" lines parsed.";
+            print(str(i)+" lines parsed.");
         chr1, locus1, sens1,indice1, chr2, locus2, sens2,indice2 = line.split(); # split it by whitespace
         locus1=int(locus1);sens1=int(sens1);
         locus2=int(locus2);sens2=int(sens2); 
@@ -45,15 +45,16 @@ with open(sys.argv[1]) as f: # open the file for reading output alignment file
             maxi[chr2] =  bin2;
  
 # Check for the maximum of bins:  
-list_chr = sort(maxi.keys());   #  by default all the chromosomes of the organism
-#list_chr = ["chr3"];  # or list of subset of chromosomes you want to display
+#list_chr = sort(maxi.keys());   #  by default all the chromosomes of the organism
+
+list_chr = ["chr3"];  # or list of subset of chromosomes you want to display
 
 N_BINS=0;
 for chr in list_chr:
     N_BINS=N_BINS+ maxi[chr]+1;
-    print chr,maxi[chr] ;
+    print(chr,maxi[chr]) ;
 # 
-print N_BINS;
+print(N_BINS);
  
 # Conversion of the Matrix in an numpy array object:
 bin_mat1=0;
