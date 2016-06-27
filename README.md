@@ -174,7 +174,7 @@ In this code, you can modify the list of the chromosome(s) you want to display. 
 We used the normalization procedure called SCN (for Sequential Component Normalization presented in http://www.biomedcentral.com/1471-2164/13/436). 
 This procedure assumes that every bin should be detected with the same strength. We divide each line of the previous matrice by its sum then each column by its sum. We reiterate this loop several times. It can be shown that after several iterations, the matrice has converged. 
 Before the iterations, poor interacting bins must be discarded and considered as non detectable bins (due to experimental biases, unmapple sequences etc). 
-To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine this threshold, you can plot the distribution in the number of reads by doing the histogram in a python terminal: 
+To do that, a threshold is given as an argument to the SCN function so that every bin with a reads number below this value will be replaced by vectors of zeros. To determine this threshold, you can plot the distribution in the number of reads by doing the histogram in a python terminal with [`histo_r.py`](python_codes/histo_r.py):
 
 ```python
 from pylab import *
