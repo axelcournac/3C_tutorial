@@ -23,7 +23,7 @@ def scn_func(A,threshold):
     indices2=np.where(keep <=0 );
     
     for n in range(0,n_iterations) :
-        print n;
+        print(n);
         for i in range(0,n1) :
             A[indices1,i]=A[indices1,i]/ np.sum(A[indices1,i]);
             A[indices2,i]=0;    
