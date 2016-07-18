@@ -271,6 +271,9 @@ It consists in doing a paired T test between "left vector" and "right vector" on
 We coded this computation in the function [directional_indice](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/directional_indice.py). 
 
 ```python
+import directional_indice
+import matplotlib.gridspec as gridspec
+
 # Computation and plot of Directional Index:
 M = np.corrcoef(mn);
 n1 = M.shape[0];
