@@ -313,6 +313,11 @@ It can be shown that the first eigen vector corresponds to the 2 compartments pa
 It should be kept in mind that this is a first approximation of the 3D structure of a genome and other or sub-compartments can be detected using higher resolution and/or using other tools of compartment detection.
 
 ```python
+import matplotlib.gridspec as gridspec
+import scipy as sc
+from scipy import signal
+from scipy.linalg import eig
+
 # Computation of eigen vectors:
 (V,D) = sc.linalg.eig(mc);
 plot(D[:,0]);
@@ -361,10 +366,4 @@ savefig('4Cplot_chr3.png');
 ```
 Example of 4C plot from the normalised contacts map for the position 37000000 bp on the chromosome 3:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/4Cplot_chr3.png)
-
-
-
-
-
-
 
