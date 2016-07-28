@@ -45,9 +45,8 @@ with open(sys.argv[1]) as f: # open the file for reading output alignment file
             maxi[chr2] =  bin2;
  
 # Check for the maximum of bins:  
-#list_chr = sort(maxi.keys());   #  by default all the chromosomes of the organism
-
-list_chr = ["chr3"];  # or list of subset of chromosomes you want to display
+list_chr = sort(maxi.keys() );   #  by default all the chromosomes of the organism
+#list_chr = ["chr3"];  # or list of subset of chromosomes you want to display
 
 N_BINS=0;
 for chr in list_chr:
@@ -66,7 +65,6 @@ for chr1 in list_chr :
         bin_mat2=0;
         for chr2 in list_chr  :  
             for bin2 in range(0,maxi[chr2]) :
-                bin_mat2 +=1;
                 key1=(chr1, bin1, chr2, bin2);
                 if key1 in mat:
                     mat[key1] = mat[key1]; 
@@ -74,10 +72,12 @@ for chr1 in list_chr :
                 else:
                     mat[key1] = 0;
                     MATRICE[bin_mat1,bin_mat2]= 0;
+                bin_mat2 +=1;
         bin_mat1 +=1;
 
 # Plot of the matrice and savings:
 imshow( MATRICE**0.2,interpolation="none");
 colorbar();
 savefig('MAT_RAW.png');
-np.savetxt('MAT_RAW.txt',MATRICE);
+np.savetxt('MAT_RAW.txt',MATRICE)
+
