@@ -19,20 +19,19 @@ def scn_func(A,threshold):
         else :
             keep[i] = 0
     
-    indices1=np.where(keep >0 );
-    indices2=np.where(keep <=0 );
+    indices1=np.where(keep >0 )
+    indices2=np.where(keep <=0 )
     
     for n in range(0,n_iterations) :
         print(n);
         for i in range(0,n1) :
-            A[indices1,i]=A[indices1,i]/ np.sum(A[indices1,i]);
-            A[indices2,i]=0;    
-        A[np.isnan(A)] = 0.0;  
+            A[indices1[0],i]=A[indices1[0],i]/ np.sum(A[indices1[0],i])
+            A[indices2[0],i]=0   
+        A[np.isnan(A)] = 0.0 
         
         for i in range(0,n1) :    
-            A[i,indices1]=A[i,indices1]/ np.sum(A[i,indices1]);
-            A[i,indices2]=0;   
-        A[np.isnan(A)] = 0.0;     
+            A[i,indices1[0]]=A[i,indices1[0]]/ np.sum(A[i,indices1[0]])
+            A[i,indices2[0]]=0  
+        A[np.isnan(A)] = 0.0    
         
     return A
-    
