@@ -61,10 +61,10 @@ bin_mat2=0;
 MATRICE=np.zeros( (N_BINS,N_BINS) );
 
 for chr1 in list_chr :
-    for bin1 in range(0,maxi[chr1]) :
+    for bin1 in range(0,maxi[chr1]+1) :
         bin_mat2=0;
         for chr2 in list_chr  :  
-            for bin2 in range(0,maxi[chr2]) :
+            for bin2 in range(0,maxi[chr2]+1) :
                 key1=(chr1, bin1, chr2, bin2);
                 if key1 in mat:
                     mat[key1] = mat[key1]; 
