@@ -266,7 +266,7 @@ Example of plot for the human chromosome 3 with 100 kb bins and 2 iterations of 
 
 
 ## Directional Index tool to detect TADs
-This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different compartments in the genome.
+This tool is commonly used in Hi-C data analysis. It looks for change in the directionality between "left vector" and "right vector" at a certain loci in the genome. A change could come from the presence of a border between two different domains in the genome.
 It consists in doing a paired T test between "left vector" and "right vector" on each bin along the genome. The size of the "left vector" and "right vector" is put as a parameter and allows to look for domains structures at a specific scale. 
 We coded this computation in the function [directional_indice](https://github.com/axelcournac/3C_tutorial/blob/master/python_codes/directional_indice.py). 
 
