@@ -367,3 +367,21 @@ savefig('4Cplot_chr3.png');
 Example of 4C plot from the normalised contacts map for the position 37000000 bp on the chromosome 3:
 ![alt tag](https://github.com/axelcournac/3C_analysis_tools/blob/master/pictures/4Cplot_chr3.png)
 
+
+## Convertion into cool file: 
+
+You can convert the output file with the command like this:
+```bash
+cooler cload pairs --zero-based -c1 1 -p1 2 -c2 5 -p2 6 /home/axel/Bureau/fasta/ecoli/eColi.chr_sizes.txt:2000 output_alignment_idpt_EColi.dat.indices.filtered output_alignment_idpt_EColi.dat.indices.filtered.cool
+```
+
+where    eColi.chr_sizes.txt is a file containing the name and the size of your chromosome.
+
+2000 is the size of the bin
+
+you just need to install cooler:
+
+https://cooler.readthedocs.io/en/latest/quickstart.html
+
+Then you can use the output_alignment_idpt_EColi.dat.indices.filtered.cool  for chromosight :D 
+
